@@ -56,24 +56,4 @@
     
   </entry>
   
-  <entry>
-    <title>网安12.1--Cent OS 7</title>
-    <link href="http://example.com/2023/12/02/%E7%BD%91%E5%AE%8912-1-Cent-OS-7/"/>
-    <id>http://example.com/2023/12/02/%E7%BD%91%E5%AE%8912-1-Cent-OS-7/</id>
-    <published>2023-12-02T08:45:06.000Z</published>
-    <updated>2023-12-02T08:47:04.032Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="网安12-1–Cent-OS-7"><a href="#网安12-1–Cent-OS-7" class="headerlink" title="网安12.1–Cent OS 7"></a>网安12.1–Cent OS 7</h1><h2 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h2><p>ls查询当前目录<img src="https://raw.githubusercontent.com/hkbijihxl/123/main/img/image-20231202100612503.png" alt="image-20231202100612503"></p><p>ls &#x2F;列出根目录(&#x2F;)下的所有目录<img src="https://raw.githubusercontent.com/hkbijihxl/123/main/img/image-20231202102352813.png" alt="image-20231202102352813"></p><p>ls -a显示所有文件，包括隐藏文件(. 开头)<img src="https://raw.githubusercontent.com/hkbijihxl/123/main/img/image-20231202102715231.png" alt="image-20231202102715231">       </p><p>&#x2F;bin        二进制文件，系统常规命令<br>&#x2F;boot       系统启动分区，系统启动时读取的文件<br>&#x2F;dev        设备文件<br>&#x2F;etc        大多数配置文件<br>&#x2F;home       普通用户的家目录<br>&#x2F;lib        32位函数库<br>&#x2F;lib64      64位库<br>&#x2F;media      手动临时挂载点<br>&#x2F;mnt        手动临时挂载点<br>&#x2F;opt        第三方软件安装位置<br>&#x2F;proc       进程信息及硬件信息<br>&#x2F;root       临时设备的默认挂载点<br>&#x2F;sbin       系统管理命令<br>&#x2F;srv        数据<br>&#x2F;var        数据<br>&#x2F;sys        内核相关信息<br>&#x2F;tmp        临时文件<br>&#x2F;usr        用户相关设定</p><p>ls -al显示路径中所有文件的详细信息(属性)     <img src="https://raw.githubusercontent.com/hkbijihxl/123/main/img/image-20231202103419665.png" alt="image-20231202103419665"><br>-普通文件d目录文件<br>所有者 所属组 其他人(3个一组)<br>u  g   o<br>文件数量     文件大小<br>rwx  读写执行  最大权限7<br>421<br>. 当前目录<br>.. 上一级目录<br>ls -d查看目录<img src="https://raw.githubusercontent.com/hkbijihxl/123/main/img/image-20231202105950585.png" alt="image-20231202105950585"></p><p>touch 创建文件<img src="https://raw.githubusercontent.com/hkbijihxl/123/main/img/image-20231202111319097.png" alt="image-20231202111319097"></p><p>只有可执行、文本文件两种 Linux中<br>mkdir 创建目录<br>mkdir -p 递归创建</p><p><img src="https://raw.githubusercontent.com/hkbijihxl/123/main/img/image-20231202144459334.png" alt="image-20231202144459334"><br>cd 切换目录<br>cd .  cd ..  cd &#x2F;<br>cd &#x2F;                 &#x2F;&#x2F;切换到根目录<br>cd &#x2F;bin              &#x2F;&#x2F;切换到根目录下的bin目录<br>  cd ..&#x2F;               &#x2F;&#x2F;切换到上一级目录 或者使用命令：cd ..<br>  cd ~                 &#x2F;&#x2F;切换到home目录<br>  cd -                 &#x2F;&#x2F;切换到上次访问的目录<br>  cd xx(文件夹名)       &#x2F;&#x2F;切换到本目录下的名为xx的文件目录，如果目录不存在报错<br>  cd &#x2F;xxx&#x2F;xx&#x2F;x         &#x2F;&#x2F;可以输入完整的路径，直接切换到目标目录，输入过程中可以使用tab键快速补全</p><p>whoami 当前用户<br>id 权限<br>pwd 当前目录<img src="https://raw.githubusercontent.com/hkbijihxl/123/main/img/image-20231202145526982.png" alt="image-20231202145526982"><br>rm 删除<br>rm -f 强制删除<br>rm -rf 强制递归删除<img src="https://raw.githubusercontent.com/hkbijihxl/123/main/img/image-20231202145739696.png" alt="image-20231202145739696"><br>mv<br>ls &#x2F;bin|grep<br>cat 查看文本文件<br>vi 编辑文件<br>i 插入<br>:wq!保存退出<br>:q!退出<br>touch anaconda-ks.cfg  234<br>cat -n 显示文件行号<br>chmod 755 234 权限更改<br>echo 输出<br>echo “234” &gt;&gt;test1&#x2F;4<br>find &#x2F; 最大范围<br>find 搜文件 find &#x2F; -name ls<br>-user root<br>size +204800<br>-iname Ls 不区分大小写<br>useradd  admin 创建用户<br>passwd admin 修改密码<br>ping baidu.com -c 3 b百度<br>1.systemctl enable sshd<br>2.systemctl start sshd<br>3.vi&#x2F;etc&#x2F;ssh&#x2F;sshd_config  esc :set nu<br>4<br>5.systemctl restart sshd</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h1 id=&quot;网安12-1–Cent-OS-7&quot;&gt;&lt;a href=&quot;#网安12-1–Cent-OS-7&quot; class=&quot;headerlink&quot; title=&quot;网安12.1–Cent OS 7&quot;&gt;&lt;/a&gt;网安12.1–Cent OS 7&lt;/h1&gt;&lt;h2 id=&quot;命令&quot;&gt;&lt;a hr</summary>
-      
-    
-    
-    
-    
-  </entry>
-  
 </feed>
