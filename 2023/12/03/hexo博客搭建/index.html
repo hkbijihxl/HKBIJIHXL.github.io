@@ -6,15 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Archives | Hexo</title>
+  <title>hexo博客搭建 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/archives/index.html">
+  <meta name="description" content="Hexo博客搭建前期准备 提前安装好(node.js)[https:&#x2F;&#x2F;nodejs.org&#x2F;en] 左边的那个 提前安装好(GIt) 提前注册好一个github账号  搭建 在本地找个目录放博客源文件，路径不要有中文  在选定的目录中，右键Git Bash Here  使用npm命令安装Hexo，输入： npm install -g hexo-clihexo init blogcd bloghe">
+<meta property="og:type" content="article">
+<meta property="og:title" content="hexo博客搭建">
+<meta property="og:url" content="http://example.com/2023/12/03/hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Hexo博客搭建前期准备 提前安装好(node.js)[https:&#x2F;&#x2F;nodejs.org&#x2F;en] 左边的那个 提前安装好(GIt) 提前注册好一个github账号  搭建 在本地找个目录放博客源文件，路径不要有中文  在选定的目录中，右键Git Bash Here  使用npm命令安装Hexo，输入： npm install -g hexo-clihexo init blogcd bloghe">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/123/main/img/image-20231203111500974.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/123/main/img/image-20231203131240980.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/123/main/img/image-20231203133105994.png">
+<meta property="article:published_time" content="2023-12-03T02:56:07.000Z">
+<meta property="article:modified_time" content="2023-12-03T05:32:17.113Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/hkbijihxl/123/main/img/image-20231203111500974.png">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -148,103 +156,198 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-hexo博客搭建" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      hexo博客搭建
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2023" class="archive-year">2023</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/12/03/hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" class="archive-article-date">
+
+        
+        <a href="/2023/12/03/hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" class="archive-article-date">
   	<time datetime="2023-12-03T02:56:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-12-03</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2023/12/03/hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">hexo博客搭建</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Hexo博客搭建"><a href="#Hexo博客搭建" class="headerlink" title="Hexo博客搭建"></a>Hexo博客搭建</h1><h2 id="前期准备"><a href="#前期准备" class="headerlink" title="前期准备"></a>前期准备</h2><ol>
+<li>提前安装好(node.js)[<a target="_blank" rel="noopener" href="https://nodejs.org/en]">https://nodejs.org/en]</a> 左边的那个</li>
+<li>提前安装好(GIt)</li>
+<li>提前注册好一个github账号</li>
+</ol>
+<h2 id="搭建"><a href="#搭建" class="headerlink" title="搭建"></a>搭建</h2><ol>
+<li><p>在本地找个目录放博客源文件，路径不要有中文</p>
+</li>
+<li><p>在选定的目录中，右键<code>Git Bash Here</code></p>
+</li>
+<li><p>使用npm命令安装Hexo，输入：</p>
+<p>npm install -g hexo-cli<br>hexo init blog<br>cd blog<br>hexo g</p>
+</li>
+<li><p>检查网站，在上一个<code>Git Bash Here</code>输入三条命令：</p>
+<p>hexo n test_my_site 	#创建一篇博客文章</p>
+<p>hexo g							#生成</p>
+<p>hexo s 							#预览</p>
+<p>之后就可以访问<a target="_blank" rel="noopener" href="http://localhost:4000/%E9%A2%84%E8%A7%88blog%E4%BA%86">http://localhost:4000/预览blog了</a></p>
+</li>
+<li><p>配置ssh</p>
+<p>(1):cd ~&#x2F;.ssh 		#检查本机已存在的ssh密钥</p>
+<p>​	提示 No such file or directory 说明你是第一次使用git。</p>
+<p>(2):ssh-keygen -t rsa -C “邮件地址”</p>
+<p>​	然后连续3次回车，最终会生成一个文件在用户目录下，打开用户目录，找到.ssh\id_rsa.pub文件，记事本 	打开并复制里面的内容，打开你的github主页，进入个人设置 -&gt; SSH and GPG keys -&gt; New SSH key：</p>
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/123/main/img/image-20231203111500974.png" alt="image-20231203111500974"></p>
+<p>(3):key填写”C:\Users\86178.ssh\id_rsa.pub”中的内容</p>
+<p>(4):ssh连接，测试是否成功</p>
+<p>​	ssh -T <a href="mailto:git@github.com">git@github.com</a> 	# 注意邮箱地址不用改</p>
+<p>(5):如果提示Are you sure you want to continue connecting (yes&#x2F;no)?，输入yes，然后会看到下面这个，就	算成功：Hi liuxianan! You’ve successfully authenticated, but GitHub does not provide shell access.</p>
+<p>(6):在blog目录下打开cmd(管理员身份)，输入：</p>
+<p>​	npm install hexo-deployer-git –save</p>
+<p>(7):Git Bash Here 中继续配置</p>
+<p>​	git config –global user.name “luozhixiaowo”		#你的github用户名<br>​	git config –global user.email “<a href="mailto:xxx@qq.com">xxx@qq.com</a>“		# 填写你的邮箱</p>
+</li>
+<li><p>代码上传</p>
+<p>(1):在github上新建一个存储库，命名:github的用户名.github.io</p>
+<p>(2):编辑_config.yml文件，在最下面更改，注意格式，缩进不对会导致上传不成功</p>
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/123/main/img/image-20231203131240980.png" alt="image-20231203131240980"></p>
+<p>(3):上传</p>
+<p>​	hexo d</p>
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/123/main/img/image-20231203133105994.png" alt="image-20231203133105994"></p>
+</li>
+</ol>
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2023/12/03/hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/12/02/Typora-1/" class="archive-article-date">
-  	<time datetime="2023-12-02T09:34:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-12-02</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2023/12/02/Typora-1/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Typora</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2023/12/02/Typora-1/">Typora</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2023/12/02/%E7%BD%91%E5%AE%8912-1-Cent-OS-7/" class="archive-article-date">
-  	<time datetime="2023-12-02T08:45:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-12-02</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2023/12/02/%E7%BD%91%E5%AE%8912-1-Cent-OS-7/">网安12.1--Cent OS 7</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
 
 
           </div>
@@ -267,8 +370,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
