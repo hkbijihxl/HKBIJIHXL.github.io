@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2023-12-03T07:23:03.060Z</updated>
+  <updated>2023-12-04T13:40:07.229Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>12.4网络基础知识</title>
+    <link href="http://example.com/2023/12/04/%E7%AC%AC%E4%B8%80%E5%91%A8%E7%9F%A5%E8%AF%86%E5%A4%8D%E7%9B%98/"/>
+    <id>http://example.com/2023/12/04/%E7%AC%AC%E4%B8%80%E5%91%A8%E7%9F%A5%E8%AF%86%E5%A4%8D%E7%9B%98/</id>
+    <published>2023-12-04T02:41:51.000Z</published>
+    <updated>2023-12-04T13:40:07.229Z</updated>
+    
+    <content type="html"><![CDATA[<p>docker， 计算机网络(安全方向的)，动态网站搭建，</p><p>docker， 计算机网络(安全方向的)，动态网站搭建，</p><p>cnvd证书 cve证书</p><p>远控 </p><p>shell 壳</p><p><img src="https://raw.githubusercontent.com/hkbijihxl/123/main/img/image-20231204105951077.png" alt="image-20231204105951077"></p><p>反弹shell</p><p><img src="https://raw.githubusercontent.com/hkbijihxl/123/main/img/image-20231204110317789.png" alt="image-20231204110317789"></p><p><img src="https://raw.githubusercontent.com/hkbijihxl/123/main/img/image-20231204111312107.png" alt="image-20231204111312107"></p><p><img src="https://raw.githubusercontent.com/hkbijihxl/123/main/img/image-20231204111510210.png" alt="image-20231204111510210"></p><p><img src="https://raw.githubusercontent.com/hkbijihxl/123/main/img/image-20231204112222366.png" alt="image-20231204112222366"></p><p><img src="https://raw.githubusercontent.com/hkbijihxl/123/main/img/image-20231204112432894.png" alt="image-20231204112432894"></p><p>vscode插件</p><p>code run</p><p>python</p><p>约法三章:文件名、文件目录不能用中文；_代替空格；报错以管理员身份运行；驼峰命名；软件不装C盘；geek卸载软件；每天写笔记；早晚打卡；请假在企业微信；每个知识点有提高部分（隐藏）。</p><p><img src="https://raw.githubusercontent.com/hkbijihxl/123/main/img/image-20231204155222672.png" alt="image-20231204155222672"></p><h2 id="网络基础知识"><a href="#网络基础知识" class="headerlink" title="网络基础知识"></a>网络基础知识</h2><p>cmdipconfig#显示ip</p><p>ipv6</p><p>ipv4</p><p><img src="https://raw.githubusercontent.com/hkbijihxl/123/main/img/image-20231204160908100.png" alt="image-20231204160908100"></p><p>255.255.255.255&#x2F;2432位abc固定，d可变</p><p>255.255.255.255&#x2F;302个可分配主机IP地址；</p><p>第一个为网络地址（网关），最后一个为广播地址（广播），不变</p><h4 id="公网私网"><a href="#公网私网" class="headerlink" title="公网私网"></a>公网私网</h4><p>公网(外网)ip私网(内网)ip</p><p>ip地址ABC可分配(公、私网IP地址)DE科研</p><p>​</p><p><img src="https://raw.githubusercontent.com/hkbijihxl/123/main/img/image-20231204163618459.png" alt="image-20231204163618459"></p><p><img src="https://raw.githubusercontent.com/hkbijihxl/123/main/img/image-20231204164048603.png" alt="image-20231204164048603"></p><p>手机(内网ip)abc段</p><p><img src="https://raw.githubusercontent.com/hkbijihxl/123/main/img/image-20231204164838005.png" alt="image-20231204164838005"></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;docker， 计算机网络(安全方向的)，动态网站搭建，&lt;/p&gt;
+&lt;p&gt;docker， 计算机网络(安全方向的)，动态网站搭建，&lt;/p&gt;
+&lt;p&gt;cnvd证书 cve证书&lt;/p&gt;
+&lt;p&gt;远控 &lt;/p&gt;
+&lt;p&gt;shell 壳&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://r</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>markdown的使用说明</title>
