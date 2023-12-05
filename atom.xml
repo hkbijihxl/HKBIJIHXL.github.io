@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2023-12-05T01:03:36.216Z</updated>
+  <updated>2023-12-05T06:02:10.894Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -21,8 +21,19 @@
     <link href="http://example.com/2023/12/05/12-5/"/>
     <id>http://example.com/2023/12/05/12-5/</id>
     <published>2023-12-05T01:03:36.000Z</published>
-    <updated>2023-12-05T01:03:36.216Z</updated>
+    <updated>2023-12-05T06:02:10.894Z</updated>
     
+    <content type="html"><![CDATA[<p>静态路由：指名下一跳是谁</p><p>动态路由：</p><p>静态ip手动设置</p><p>动态ip自动分配dhcp协议(管理和分配ip)</p><p><img src="https://raw.githubusercontent.com/hkbijihxl/123/main/img/image-20231205092720182.png" alt="image-20231205092720182"></p><p>代理</p><p>socks5：tcp&#x2F;ip数据TCP UDP</p><p><img src="https://raw.githubusercontent.com/hkbijihxl/123/main/img/image-20231205094837407.png" alt="image-20231205094837407"></p><p>常见协议</p><p><img src="https://raw.githubusercontent.com/hkbijihxl/123/main/img/image-20231205095824618.png" alt="image-20231205095824618"></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;静态路由：指名下一跳是谁&lt;/p&gt;
+&lt;p&gt;动态路由：&lt;/p&gt;
+&lt;p&gt;静态ip	手动设置&lt;/p&gt;
+&lt;p&gt;动态ip	自动分配	dhcp协议(管理和分配ip)&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/hkbijihxl/</summary>
+      
     
     
     
