@@ -1,5 +1,5 @@
-http://example.com/2023/12/05/12-5/
 http://example.com/2023/12/04/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/
+http://example.com/2023/12/05/%E8%B7%AF%E7%94%B1%E4%B8%8E%E4%BA%A4%E6%8D%A2/
 http://example.com/2023/12/02/%E7%BD%91%E5%AE%8912-1-Cent-OS-7/
 http://example.com/2023/12/03/markdown%E7%9A%84%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/
 http://example.com/2023/12/03/hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/
