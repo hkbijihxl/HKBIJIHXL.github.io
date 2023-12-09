@@ -17,18 +17,27 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <title>网络基础知识 | Hexo</title>
-  <meta name="description" content="网络基础知识私网、公网、ip、子网掩码、win10配置ip、ip169报错、vmware桥接、nat、仅主机、虚拟网卡 一、IP地址: ipv4：(1)、IP地址就是一个唯一标识，是一段网络编码。(2)、IP地址由32位二进制数组成，为了方便记忆，将IP地址32位进制数进行分段，每段8位，共4段，然后将		没段8位二进制转换为十进制数，中间点号分割。这种表达方式称之为点分十进制。(3)、IP地址的">
+  <title>路由与交换 | Hexo</title>
+  <meta name="description" content="网络基础知识一、IP地址 ipv4：(1)、IP地址就是一个唯一标识，是一段网络编码。(2)、IP地址由32位二进制数组成，为了方便记忆，将IP地址32位进制数进行分段，每段8位，共4段，然后将		没段8位二进制转换为十进制数，中间点号分割。这种表达方式称之为点分十进制。(3)、IP地址的形式：X.X.X.X 	X的范围：0-255		#网络位(固定)+主机位(可分配)255.255.255.25">
 <meta property="og:type" content="article">
-<meta property="og:title" content="网络基础知识">
+<meta property="og:title" content="路由与交换">
 <meta property="og:url" content="http://example.com/2023/12/04/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="网络基础知识私网、公网、ip、子网掩码、win10配置ip、ip169报错、vmware桥接、nat、仅主机、虚拟网卡 一、IP地址: ipv4：(1)、IP地址就是一个唯一标识，是一段网络编码。(2)、IP地址由32位二进制数组成，为了方便记忆，将IP地址32位进制数进行分段，每段8位，共4段，然后将		没段8位二进制转换为十进制数，中间点号分割。这种表达方式称之为点分十进制。(3)、IP地址的">
+<meta property="og:description" content="网络基础知识一、IP地址 ipv4：(1)、IP地址就是一个唯一标识，是一段网络编码。(2)、IP地址由32位二进制数组成，为了方便记忆，将IP地址32位进制数进行分段，每段8位，共4段，然后将		没段8位二进制转换为十进制数，中间点号分割。这种表达方式称之为点分十进制。(3)、IP地址的形式：X.X.X.X 	X的范围：0-255		#网络位(固定)+主机位(可分配)255.255.255.25">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://example.com/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86.assets/image-20231204160908100.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/123/main/img/image-20231204163618459.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/123/main/img/image-20231204164048603.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/123/main/img/image-20231204164838005.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/123/main/img/image-20231209140611196.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/123/main/img/image-20231209140705604.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/123/main/img/image-20231209140845515.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/123/main/img/image-20231209140940187.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/123/main/img/image-20231209141024817.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/123/main/img/image-20231209142640319.png">
+<meta property="og:image" content="http://example.com/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86.assets/image-20231205092720182.png">
+<meta property="og:image" content="http://example.com/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86.assets/image-20231205094837407.png">
+<meta property="og:image" content="http://example.com/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86.assets/image-20231205095824618.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/123/main/img/image-20231204105951077.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/123/main/img/image-20231204110317789.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/123/main/img/image-20231204111312107.png">
@@ -39,7 +48,7 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/123/main/img/image-20231207093143924.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/123/main/img/image-20231207093816996.png">
 <meta property="article:published_time" content="2023-12-04T02:41:51.000Z">
-<meta property="article:modified_time" content="2023-12-07T13:57:18.592Z">
+<meta property="article:modified_time" content="2023-12-09T06:46:54.538Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://example.com/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86.assets/image-20231204160908100.png">
@@ -240,7 +249,7 @@
   <div class="widget">
     <h3 class="widget-title">Archive</h3>
     <div class="widget-body">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/12/">December 2023</a><span class="archive-list-count">7</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/12/">December 2023</a><span class="archive-list-count">6</span></li></ul>
     </div>
   </div>
 
@@ -289,22 +298,7 @@
                 
               </p>
               <p class="item-title">
-                <a href="/2023/12/05/%E8%B7%AF%E7%94%B1%E4%B8%8E%E4%BA%A4%E6%8D%A2/" class="title">路由与交换</a>
-              </p>
-              <p class="item-date">
-                <time datetime="2023-12-05T01:03:36.000Z" itemprop="datePublished">2023-12-05</time>
-              </p>
-            </div>
-          </li>
-          
-          <li>
-            
-            <div class="item-inner">
-              <p class="item-category">
-                
-              </p>
-              <p class="item-title">
-                <a href="/2023/12/04/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" class="title">网络基础知识</a>
+                <a href="/2023/12/04/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" class="title">路由与交换</a>
               </p>
               <p class="item-date">
                 <time datetime="2023-12-04T02:41:51.000Z" itemprop="datePublished">2023-12-04</time>
@@ -323,6 +317,21 @@
               </p>
               <p class="item-date">
                 <time datetime="2023-12-03T06:03:29.000Z" itemprop="datePublished">2023-12-03</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2023/12/03/hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" class="title">hexo博客搭建</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2023-12-03T02:56:07.000Z" itemprop="datePublished">2023-12-03</time>
               </p>
             </div>
           </li>
@@ -347,7 +356,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      网络基础知识
+      路由与交换
     </h1>
   
 
@@ -370,8 +379,7 @@
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <h2 id="网络基础知识"><a href="#网络基础知识" class="headerlink" title="网络基础知识"></a>网络基础知识</h2><p>私网、公网、ip、子网掩码、win10配置ip、ip169报错、vmware桥接、nat、仅主机、虚拟网卡</p>
-<h4 id="一、IP地址"><a href="#一、IP地址" class="headerlink" title="一、IP地址:"></a>一、IP地址:</h4><blockquote>
+        <h2 id="网络基础知识"><a href="#网络基础知识" class="headerlink" title="网络基础知识"></a>网络基础知识</h2><h4 id="一、IP地址"><a href="#一、IP地址" class="headerlink" title="一、IP地址"></a>一、IP地址</h4><blockquote>
 <h5 id="ipv4："><a href="#ipv4：" class="headerlink" title="ipv4："></a>ipv4：</h5><p>(1)、IP地址就是一个唯一标识，是一段网络编码。<br>(2)、IP地址由32位二进制数组成，为了方便记忆，将IP地址32位进制数进行分段，每段8位，共4段，然后将		没段8位二进制转换为十进制数，中间点号分割。这种表达方式称之为点分十进制。<br>(3)、IP地址的形式：X.X.X.X 	X的范围：0-255		#网络位(固定)+主机位(可分配)<br>255.255.255.255&#x2F;24	32位	abc固定，d可变<br>a		b	c	d<br>255.255.255.255&#x2F;30	2个可分配主机IP地址；<br>第一个为网络地址（网关），最后一个为广播地址（广播），不变	<br>cmd	ipconfig	#显示ip</p>
 <h5 id="ipv6："><a href="#ipv6：" class="headerlink" title="ipv6："></a>ipv6：</h5><p>(1)、IPv6 地址采用十六进制的表示方法，共 128 位，分 8 组表示，每组 16 位，每组表示 4 个十六进制数。<br>    各组之间用 “ : ”号隔开，例如：1080:0:0:0:8:800:200C:417A<br>(2)、在 IPv6 地址段中有时会出现连续的机组0，为了简化书写，这些 0 可以用“ : : ”代替，但一个地址中只能		出现一次“ : : ”。<br>(3)、128 位的 IPv6 地址由 64 位网络地址和 64 位主机地址组成。其中，64 位的网络地址又分为 48 位的全		球网络标识符和 16 位的本地子网标识符</p>
 <p><img src="/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86.assets/image-20231204160908100.png" alt="image-20231204160908100"></p>
@@ -379,7 +387,7 @@
 <h4 id="二、公网私网"><a href="#二、公网私网" class="headerlink" title="二、公网私网"></a>二、公网私网</h4><blockquote>
 <p>(1)、含义：公网又名广域网、外网，指的就是我们平时说的互联网。私网又名内网、局域网，指的是路由器		或交换机下创建的局部互联网络。<br>(2)、公网(外网)ip:在公网中使用的IP地址<br>​		私网(内网)ip:在局域网中使用的IP地址		<br>127.0.0.1	本地回环地址<br>0.0.0.0	任意地址<br>ip地址	ABC可分配(公、私网IP地址)		DE科研<br><img src="https://raw.githubusercontent.com/hkbijihxl/123/main/img/image-20231204163618459.png" alt="image-20231204163618459"><br><img src="https://raw.githubusercontent.com/hkbijihxl/123/main/img/image-20231204164048603.png" alt="image-20231204164048603"><br>手机(内网ip)	abc段<br><img src="https://raw.githubusercontent.com/hkbijihxl/123/main/img/image-20231204164838005.png" alt="image-20231204164838005"></p>
 </blockquote>
-<h4 id="三、子网掩码："><a href="#三、子网掩码：" class="headerlink" title="三、子网掩码："></a>三、子网掩码：</h4><blockquote>
+<h4 id="三、子网掩码"><a href="#三、子网掩码" class="headerlink" title="三、子网掩码"></a>三、子网掩码</h4><blockquote>
 <h5 id="作用："><a href="#作用：" class="headerlink" title="作用："></a>作用：</h5><p>(1)、子网掩码必须结合IP地址一起对应使用。<br>(2)、只有通过子网掩码，才能表明一台主机所在的子网与其他子网的关系，使网络正常工作。<br>(3)、子网掩码和IP地址做“与”运算，分离出IP地址中的网络地址和主机地址，用于判断该IP地址是在本地网络		上，还是在远程网络网上。<br>(4)、子网掩码还用于将网络进一步划分为若干子网，以避免主机过多而拥堵或过少而IP浪费。</p>
 <h5 id="表示方法："><a href="#表示方法：" class="headerlink" title="表示方法："></a>表示方法：</h5><p>(1)、点分十进制不是发：二进制转换十进制，每8位用点号隔开<br>    子网掩码二进制11111111.11111111.11111111.00000000，表示为255.255.255.0</p>
 <p>(2)、CIDR斜线记法：IP地址&#x2F;n<br>①、192.168.1.100&#x2F;24，其子网掩码表示为255.255.255.0，二进制表示为11111111.11111111.11111111.00000000<br>②、172.16.198.12&#x2F;20，其子网掩码表示为255.255.240.0，二进制表示为	11111111.11111111.11110000.00000000</p>
@@ -389,12 +397,31 @@
 </blockquote>
 <p>②、自定义子网掩码，将一个网络划分子网后，把原本的主机号位置的一部分给了子网号，余下的才是给了子网的主机号。其形式如下：<br>子网划分后的IP地址：网络号＋子网号＋子网主机号<br>例如：192.168.1.100&#x2F;25，其子网掩码表示：255.255.255.128</p>
 </blockquote>
-<h4 id="win11配置ip"><a href="#win11配置ip" class="headerlink" title="win11配置ip"></a>win11配置ip</h4><p>①</p>
-<p>②</p>
-<p>③</p>
-<p>④</p>
-<p>⑤</p>
-<p>⑥</p>
+<h4 id="四、win11配置ip"><a href="#四、win11配置ip" class="headerlink" title="四、win11配置ip"></a>四、win11配置ip</h4><p>①打开设置，选择“网络和Internet设置”，在右侧的高级网络设置中，点击“更改适配器选项”<img src="https://raw.githubusercontent.com/hkbijihxl/123/main/img/image-20231209140611196.png" alt="image-20231209140611196"></p>
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/123/main/img/image-20231209140705604.png" alt="image-20231209140705604"></p>
+<p>②在“网络连接”窗口中，找到当前正在使用的网络连接，右键点击并选择“属性”<img src="https://raw.githubusercontent.com/hkbijihxl/123/main/img/image-20231209140845515.png" alt="image-20231209140845515"></p>
+<p>③在弹出的窗口中，找到“Internet协议版本4（TCP&#x2F;IPv4）”，双击打开属性设置<img src="https://raw.githubusercontent.com/hkbijihxl/123/main/img/image-20231209140940187.png" alt="image-20231209140940187"></p>
+<p>④在属性设置窗口中，选择“使用下面的IP地址”选项。<img src="https://raw.githubusercontent.com/hkbijihxl/123/main/img/image-20231209141024817.png" alt="image-20231209141024817"></p>
+<p>⑤输入您想要设置的IP地址、子网掩码和默认网关。</p>
+<p>⑥点击“确定”保存设置。</p>
+<h4 id="五、VMware网络连接模式"><a href="#五、VMware网络连接模式" class="headerlink" title="五、VMware网络连接模式"></a>五、VMware网络连接模式</h4><blockquote>
+<p>1.桥接模式：在桥接模式下，虚拟机的网络适配器被连接到主机物理网络的网卡上。这使得虚拟机能够直接与物理网络中的其他设备通信，并且虚拟机可以拥有与物理网络相同的 IP 段。虚拟机在桥接模式下可以获得独立的IP地址，就像它是网络中的另一台计算机一样。<br>2.NAT模式：在NAT模式下，虚拟机的网络流量通过主机操作系统进行网络地址转换。虚拟机的网络请求似乎来自主机，而不是直接来自网络。通常，主机操作系统充当了一个虚拟的路由器，为虚拟机提供了一种间接连接到物理网络的方法。<br>3.仅主机模式：在仅主机模式下，虚拟机之间和主机之间可以进行通信，但虚拟机无法与外部物理网络中的其他设备直接通信。这种模式提供了一种在虚拟化环境中创建独立、隔离的网络环境的方法，同时不让虚拟机访问外部网络。</p>
+</blockquote>
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/123/main/img/image-20231209142640319.png" alt="image-20231209142640319"></p>
+<p>每种模式都有其独特的用途。桥接模式允许虚拟机与外部网络直接交互，NAT模式提供了一种对外部网络进行隔离并允许虚拟机访问外部资源的方式，而仅主机模式则提供了一种独立、隔离的虚拟网络环境。<br>根据具体的需求和网络配置，你可以选择不同的网络连接模式来满足你的需求。</p>
+<p>VMware虚拟网卡：在虚拟机环境中，虚拟化软件（VMware）会为每个虚拟机分配虚拟网卡，使虚拟机能够通过主机系统连接到网络。</p>
+<p>静态路由：指名下一跳是谁</p>
+<p>动态路由：</p>
+<p>静态ip	手动设置</p>
+<p>动态ip	自动分配	dhcp协议(管理和分配ip)</p>
+<p><img src="/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86.assets/image-20231205092720182.png" alt="image-20231205092720182"></p>
+<p>代理</p>
+<p>socks5：tcp&#x2F;ip数据	TCP UDP</p>
+<p><img src="/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86.assets/image-20231205094837407.png" alt="image-20231205094837407"></p>
+<p>常见协议</p>
+<p><img src="/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86.assets/image-20231205095824618.png" alt="image-20231205095824618"></p>
+<p>nat	地址转换</p>
+<p>DNS	78</p>
 <h4 id="第一周知识复盘"><a href="#第一周知识复盘" class="headerlink" title="第一周知识复盘"></a>第一周知识复盘</h4><p>docker， 计算机网络(安全方向的)，动态网站搭建，</p>
 <p>cnvd证书 cve证书</p>
 <p>远控 </p>
@@ -438,7 +465,7 @@
     
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接：</strong>
-      <a href="http://example.com/2023/12/04/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" title="网络基础知识" target="_blank" rel="external">http://example.com/2023/12/04/网络基础知识/</a>
+      <a href="http://example.com/2023/12/04/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" title="路由与交换" target="_blank" rel="external">http://example.com/2023/12/04/网络基础知识/</a>
     </li>
     
     <li class="post-copyright-license">
@@ -485,7 +512,7 @@
   <ul class="pager pull-left">
     
     <li class="prev">
-      <a href="/2023/12/05/%E8%B7%AF%E7%94%B1%E4%B8%8E%E4%BA%A4%E6%8D%A2/" title="路由与交换"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;Newer</span></a>
+      <a href="/2023/12/06/html5/" title="html5"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;Newer</span></a>
     </li>
     
     
