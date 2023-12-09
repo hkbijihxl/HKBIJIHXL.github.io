@@ -1,4 +1,4 @@
-http://example.com/2023/12/04/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/
+http://example.com/2023/12/04/%E8%B7%AF%E7%94%B1%E4%B8%8E%E4%BA%A4%E6%8D%A2/
 http://example.com/2023/12/06/html5/
 http://example.com/2023/12/06/Python%E5%9F%BA%E7%A1%80/
 http://example.com/2023/12/02/Cent%20OS%207/
