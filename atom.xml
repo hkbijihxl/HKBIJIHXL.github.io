@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2023-12-10T02:55:45.735Z</updated>
+  <updated>2023-12-10T03:39:34.260Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Proxifler</title>
+    <link href="http://example.com/2023/12/10/Proxifler/"/>
+    <id>http://example.com/2023/12/10/Proxifler/</id>
+    <published>2023-12-10T03:24:41.000Z</published>
+    <updated>2023-12-10T03:39:34.260Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="proxifler"><a href="#proxifler" class="headerlink" title="proxifler"></a>proxifler</h2><h4 id="一、安装"><a href="#一、安装" class="headerlink" title="一、安装"></a>一、安装</h4><blockquote><p><a href="http://192.168.2.6:5244/d/%E7%BD%91%E7%9B%98/%E7%99%BE%E5%BA%A6%E7%BD%91%E7%9B%98/%E8%BD%AF%E4%BB%B6%E5%A4%A7%E5%85%A8/%E6%B8%97%E9%80%8F%E5%B7%A5%E5%85%B7/proxifier_137484.rar">http://192.168.2.6:5244/d/%E7%BD%91%E7%9B%98/%E7%99%BE%E5%BA%A6%E7%BD%91%E7%9B%98/%E8%BD%AF%E4%BB%B6%E5%A4%A7%E5%85%A8/%E6%B8%97%E9%80%8F%E5%B7%A5%E5%85%B7/proxifier_137484.rar</a></p></blockquote><h4 id="二、配置"><a href="#二、配置" class="headerlink" title="二、配置"></a>二、配置</h4><p>①、打开proxifler，选择“配置文件”</p><p><img src="https://raw.githubusercontent.com/hkbijihxl/123/main/img/image-20231210113435752.png" alt="image-20231210113435752"></p><p>②、在配置文件点击代理规则，选择添加ssh</p><p><img src="https://raw.githubusercontent.com/hkbijihxl/123/main/img/image-20231210113650996.png" alt="image-20231210113650996"></p><p>③、ssh规则，动作中选择socks5；default规则，动作选择direct</p><p><img src="https://raw.githubusercontent.com/hkbijihxl/123/main/img/image-20231210113803089.png" alt="image-20231210113803089"></p><p><img src="https://raw.githubusercontent.com/hkbijihxl/123/main/img/image-20231210113926970.png" alt="image-20231210113926970"></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;proxifler&quot;&gt;&lt;a href=&quot;#proxifler&quot; class=&quot;headerlink&quot; title=&quot;proxifler&quot;&gt;&lt;/a&gt;proxifler&lt;/h2&gt;&lt;h4 id=&quot;一、安装&quot;&gt;&lt;a href=&quot;#一、安装&quot; class=&quot;headerli</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>Python基础</title>
