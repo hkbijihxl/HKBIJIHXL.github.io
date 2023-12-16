@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000" />
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top" />
+  
+  
+  <title>PHP | Hexo</title>
+  <meta name="description" content="PHP一、安装配置①phpstudy安装(http:&#x2F;&#x2F;192.168.2.6:5244&#x2F;d&#x2F;%E7%BD%91%E7%9B%98&#x2F;%E7%99%BE%E5%BA%A6%E7%BD%91%E7%9B%98&#x2F;%E8%BD%AF%E4%BB%B6%E5%A4%A7%E5%85%A8&#x2F;phpstudy_x64_8.1.1.2.exe) ②打开小皮，在首页开启Apache和MySQL  ③点击网站，选择管">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PHP">
+<meta property="og:url" content="http://example.com/2023/12/16/PHP/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="PHP一、安装配置①phpstudy安装(http:&#x2F;&#x2F;192.168.2.6:5244&#x2F;d&#x2F;%E7%BD%91%E7%9B%98&#x2F;%E7%99%BE%E5%BA%A6%E7%BD%91%E7%9B%98&#x2F;%E8%BD%AF%E4%BB%B6%E5%A4%A7%E5%85%A8&#x2F;phpstudy_x64_8.1.1.2.exe) ②打开小皮，在首页开启Apache和MySQL  ③点击网站，选择管">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/123/main/img/image-20231216204735763.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/123/main/img/image-20231216204937159.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/123/main/img/image-20231216205116785.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/123/main/img/image-20231216213147332.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/123/main/img/image-20231216213219786.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/123/main/img/image-20231216214308430.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/123/main/img/image-20231216215447137.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/123/main/img/image-20231216220109447.png">
+<meta property="article:published_time" content="2023-12-16T12:31:26.000Z">
+<meta property="article:modified_time" content="2023-12-16T14:03:40.633Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/hkbijihxl/123/main/img/image-20231216204735763.png">
+  <!-- Canonical links -->
+  <link rel="canonical" href="http://example.com/2023/12/16/PHP/index.html">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+  
+  
+<meta name="generator" content="Hexo 7.0.0"></head>
+
+
+<body class="main-center theme-black# 主题颜色 theme-black theme-blue theme-green theme-purple" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="https://github.com/hkbijihxl" target="_blank">
+          <img class="img-circle img-rotate" src="/images/avatar.jpg" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">hkbijihxl</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">汀花雨细，水树风闲，又是秋来。</h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> changsha, China</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="Search" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="Type something..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav menu-highlight">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/.">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">Home</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">Archives</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            
+            <i class="icon icon-folder"></i>
+            
+            <span class="menu-title">Categories</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            
+            <i class="icon icon-tags"></i>
+            
+            <span class="menu-title">Tags</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-repository">
+          <a href="/repository">
+            
+            <i class="icon icon-project"></i>
+            
+            <span class="menu-title">Repository</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-books">
+          <a href="/books">
+            
+            <i class="icon icon-book-fill"></i>
+            
+            <span class="menu-title">Books</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-links">
+          <a href="/links">
+            
+            <i class="icon icon-friendship"></i>
+            
+            <span class="menu-title">Links</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about">
+            
+            <i class="icon icon-cup-fill"></i>
+            
+            <span class="menu-title">About</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/hkbijihxl" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="https://weibo.com/u/7832381828" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
+        
+        <li><a href="https://twitter.com/iwebued" target="_blank" title="Twitter" data-toggle=tooltip data-placement=top><i class="icon icon-twitter"></i></a></li>
+        
+        <li><a href="https://www.behance.net/cofess" target="_blank" title="Behance" data-toggle=tooltip data-placement=top><i class="icon icon-behance"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">Board</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content">
+                <p>欢迎交流与分享经验!</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+      
+
+    
+      
+
+    
+      
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Archive</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/12/">December 2023</a><span class="archive-list-count">10</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2023/12/16/PHP/" class="title">PHP</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2023-12-16T12:31:26.000Z" itemprop="datePublished">2023-12-16</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2023/12/11/vue/" class="title">vue</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2023-12-11T01:18:53.000Z" itemprop="datePublished">2023-12-11</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2023/12/10/WireShark%E3%80%81AhMyth%E4%BD%BF%E7%94%A8/" class="title">WireShark、AhMyth使用</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2023-12-10T05:33:28.000Z" itemprop="datePublished">2023-12-10</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2023/12/10/Proxifler/" class="title">Proxifler</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2023-12-10T03:24:41.000Z" itemprop="datePublished">2023-12-10</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2023/12/06/Python%E5%9F%BA%E7%A1%80/" class="title">Python基础</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2023-12-06T13:00:05.000Z" itemprop="datePublished">2023-12-06</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
+
+    
+  </div>
+</aside>
+
+  
+  
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-PHP" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+        
+  
+    <h1 class="article-title" itemprop="name">
+      PHP
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2023/12/16/PHP/" class="article-date">
+	  <time datetime="2023-12-16T12:31:26.000Z" itemprop="datePublished">2023-12-16</time>
+	</a>
+</span>
+        
+        
+
+        
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2023/12/16/PHP/#comments" class="article-comment-link">Comments</a></span>
+        
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <h2 id="PHP"><a href="#PHP" class="headerlink" title="PHP"></a>PHP</h2><h4 id="一、安装配置"><a href="#一、安装配置" class="headerlink" title="一、安装配置"></a>一、安装配置</h4><p>①phpstudy安装(<a target="_blank" rel="noopener" href="http://192.168.2.6:5244/d/%E7%BD%91%E7%9B%98/%E7%99%BE%E5%BA%A6%E7%BD%91%E7%9B%98/%E8%BD%AF%E4%BB%B6%E5%A4%A7%E5%85%A8/phpstudy_x64_8.1.1.2.exe">http://192.168.2.6:5244/d/%E7%BD%91%E7%9B%98/%E7%99%BE%E5%BA%A6%E7%BD%91%E7%9B%98/%E8%BD%AF%E4%BB%B6%E5%A4%A7%E5%85%A8/phpstudy_x64_8.1.1.2.exe</a>)</p>
+<p>②打开小皮，在首页开启Apache和MySQL</p>
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/123/main/img/image-20231216204735763.png" alt="image-20231216204735763"></p>
+<p>③点击网站，选择管理，打开根目录，清空</p>
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/123/main/img/image-20231216204937159.png" alt="image-20231216204937159"></p>
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/123/main/img/image-20231216205116785.png" alt="image-20231216205116785"></p>
+<h4 id="二、PHP基础"><a href="#二、PHP基础" class="headerlink" title="二、PHP基础"></a>二、PHP基础</h4><h6 id="1-基本语法"><a href="#1-基本语法" class="headerlink" title="(1)基本语法"></a>(1)基本语法</h6><p>PHP是一种解释性语言，其代码类似于HTML、CSS和JavaScript。PHP在<?php ?>中写。每个PHP语句都以分号<code>;</code>结束。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">//这是注释</span><br><span class="line">echo &quot;Hello World!&quot;;</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/123/main/img/image-20231216213147332.png" alt="image-20231216213147332"><img src="https://raw.githubusercontent.com/hkbijihxl/123/main/img/image-20231216213219786.png" alt="image-20231216213219786"></p>
+<h6 id="2-变量和数据类型"><a href="#2-变量和数据类型" class="headerlink" title="(2)变量和数据类型"></a>(2)变量和数据类型</h6><p>在PHP中，变量用于存储各种类型的数据。变量名以<code>$</code>开头，后面跟着变量的名称。PHP支持多种类型的数据，包括字符串、整数、浮点数、布尔值、数组和对象等.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">$name = &quot;John&quot;;</span><br><span class="line">$age = 25;</span><br><span class="line">echo &quot;My name is &quot;.$name.&quot; and I am &quot;.$age.&quot; years old.&quot;;</span><br><span class="line"></span><br><span class="line">$name = &quot;John&quot;;  //字符串</span><br><span class="line">$age = 25;  //整数</span><br><span class="line">$price = 1.99;  //浮点数</span><br><span class="line">$isMale = true;  //布尔值</span><br><span class="line">$cities = array(&quot;New York&quot;, &quot;Los Angeles&quot;, &quot;Chicago&quot;);  //数组</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
+
+<h6 id="3-运算符"><a href="#3-运算符" class="headerlink" title="(3)运算符"></a>(3)运算符</h6><p>PHP支持多种运算符，包括算术运算符、比较运算符、逻辑运算符和位运算符等.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">//算术运算符</span><br><span class="line">$x = 10;</span><br><span class="line">$y = 5;</span><br><span class="line">echo $x + $y;  //15</span><br><span class="line">echo $x - $y;  //5</span><br><span class="line">echo $x * $y;  //50</span><br><span class="line">echo $x / $y;  //2</span><br><span class="line"></span><br><span class="line">//比较运算符</span><br><span class="line">$x = 10;</span><br><span class="line">$y = &quot;10&quot;;</span><br><span class="line">var_dump($x == $y);  //布尔值true，因为值相等</span><br><span class="line">var_dump($x === $y);  //布尔值false，因为类型不同</span><br><span class="line"></span><br><span class="line">//逻辑运算符</span><br><span class="line">$x = 10;</span><br><span class="line">$y = 5;</span><br><span class="line">echo $x &gt; 5 &amp;&amp; $y &gt; 5;  //true，因为$x大于5且$y大于5</span><br><span class="line">echo $x &gt; 5 || $y &gt; 5;  //true，因为$x大于5或$y大于5</span><br><span class="line"></span><br><span class="line">//位运算符</span><br><span class="line">$x = 2;  //二进制为10</span><br><span class="line">$y = 3;  //二进制为11</span><br><span class="line">echo $x &amp; $y;  //2，因为二进制10和11进行与运算后得到10</span><br><span class="line">echo $x | $y;  //3，因为二进制10和11进行或运算后得到11</span><br></pre></td></tr></table></figure>
+
+<h6 id="4-流程控制"><a href="#4-流程控制" class="headerlink" title="(4)流程控制"></a>(4)流程控制</h6><p>PHP支持多种流程控制语句，包括条件语句、循环语句和跳转语句等。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">//条件语句</span><br><span class="line">$x = 10;</span><br><span class="line">if ($x &gt; 5) &#123;</span><br><span class="line">  echo &quot;x is greater than 5&quot;;</span><br><span class="line">&#125; elseif ($x &lt; 5) &#123;</span><br><span class="line">  echo &quot;x is less than 5&quot;;</span><br><span class="line">&#125; else &#123;</span><br><span class="line">  echo &quot;x is equal to 5&quot;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//循环语句</span><br><span class="line">$i = 0;</span><br><span class="line">while ($i &lt; 10) &#123;</span><br><span class="line">  echo $i;</span><br><span class="line">  $i++;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">for ($i = 0; $i &lt; 10; $i++) &#123;</span><br><span class="line">  echo $i;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//跳转语句</span><br><span class="line">$x = 10;</span><br><span class="line">switch ($x) &#123;</span><br><span class="line">  case 10:</span><br><span class="line">    echo &quot;x is equal to 10&quot;;</span><br><span class="line">    break;</span><br><span class="line">  case 20:</span><br><span class="line">    echo &quot;x is equal to 20&quot;;</span><br><span class="line">    break;</span><br><span class="line">  default:</span><br><span class="line">    echo &quot;x is not equal to 10 or 20&quot;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h6 id="5-函数和数组"><a href="#5-函数和数组" class="headerlink" title="(5)函数和数组"></a>(5)函数和数组</h6><p>函数和数组是PHP编程中常用的数据结构。函数用于封装可重用的代码，数组用于存储多个值。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">//函数</span><br><span class="line">function greeting($name) &#123;</span><br><span class="line">  echo &quot;Hello &quot;.$name;</span><br><span class="line">&#125;</span><br><span class="line">greeting(&quot;John&quot;);</span><br><span class="line"></span><br><span class="line">//数组</span><br><span class="line">$cities = array(&quot;New York&quot;, &quot;Los Angeles&quot;, &quot;Chicago&quot;);</span><br><span class="line">echo count($cities);  //3</span><br><span class="line">echo $cities[0];  //&quot;New York&quot;</span><br></pre></td></tr></table></figure>
+
+<h6 id="6-文件操作和数据库"><a href="#6-文件操作和数据库" class="headerlink" title="(6)文件操作和数据库"></a>(6)文件操作和数据库</h6><p>PHP可以对文件进行读取和写入操作，并可以连接数据库实现数据的存储和读取。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">//文件操作</span><br><span class="line">$filename = &quot;example.txt&quot;;</span><br><span class="line">$file = fopen($filename, &quot;w&quot;);</span><br><span class="line">fwrite($file, &quot;This is an example&quot;);</span><br><span class="line">fclose($file);</span><br><span class="line"></span><br><span class="line">//数据库连接</span><br><span class="line">$servername = &quot;localhost&quot;;</span><br><span class="line">$username = &quot;username&quot;;</span><br><span class="line">$password = &quot;password&quot;;</span><br><span class="line">$dbname = &quot;myDB&quot;;</span><br><span class="line"></span><br><span class="line">$conn = mysqli_connect($servername, $username, $password, $dbname);</span><br><span class="line">if (!$conn) &#123;</span><br><span class="line">  die(&quot;Connection failed: &quot; . mysqli_connect_error());</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">$sql = &quot;SELECT * FROM customers&quot;;</span><br><span class="line">$result = mysqli_query($conn, $sql);</span><br><span class="line"></span><br><span class="line">while ($row = mysqli_fetch_assoc($result)) &#123;</span><br><span class="line">  echo &quot;Name: &quot;.$row[&quot;name&quot;].&quot; - Email: &quot;.$row[&quot;email&quot;];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">mysqli_close($conn);</span><br></pre></td></tr></table></figure>
+
+<h4 id="三、作业"><a href="#三、作业" class="headerlink" title="三、作业"></a>三、作业</h4><h6 id="（一）"><a href="#（一）" class="headerlink" title="（一）"></a>（一）</h6><p><img src="https://raw.githubusercontent.com/hkbijihxl/123/main/img/image-20231216214308430.png" alt="image-20231216214308430"></p>
+<p>(1):</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">$a = &quot;0&quot;;</span><br><span class="line">$b = &quot;0&quot;;</span><br><span class="line">for($a=0;$a&lt;8;$a++)&#123;</span><br><span class="line">    $b=8-$a;</span><br><span class="line">    if(($a*2+$b*4)==22)&#123;</span><br><span class="line">        break;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">echo &quot;鸡的数量：&quot;.$a.&quot;&lt;br&gt;&quot;;</span><br><span class="line">echo &quot;兔的数量：&quot;.$b.&quot;&lt;br&gt;&quot;;</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/123/main/img/image-20231216215447137.png" alt="image-20231216215447137"></p>
+<p>(2):</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">$n = 0; // 5 毛的张数</span><br><span class="line">$y = 0; // 1 块的张数</span><br><span class="line">$z = 0; // 10 块的张数</span><br><span class="line">$t = 0; // 50 块的张数</span><br><span class="line">$x = 0; // 100 块的张数</span><br><span class="line">$targetAmount = 156; // 目标金额</span><br><span class="line">$combinationsCount = 0; // 符合条件的组合数量</span><br><span class="line"></span><br><span class="line">for ($n = 0; $n &lt;= $targetAmount / 0.5; $n++) &#123;</span><br><span class="line">    for ($y = 0; $y &lt;= $targetAmount / 1; $y++) &#123;</span><br><span class="line">        for ($z = 0; $z &lt;= $targetAmount / 10; $z++) &#123;</span><br><span class="line">            for ($t = 0; $t &lt;= $targetAmount / 50; $t++) &#123;</span><br><span class="line">                for ($x = 0; $x &lt;= $targetAmount / 100; $x++) &#123;</span><br><span class="line">                    // 计算当前组合的金额</span><br><span class="line">                    $currentAmount = $n * 0.5 + $y * 1 + $z * 10 + $t * 50 + $x * 100;</span><br><span class="line">                    if ($currentAmount == $targetAmount) &#123;</span><br><span class="line">                        $combinationsCount++;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">echo &quot;符合条件的组合数量为：&quot; . $combinationsCount;</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/123/main/img/image-20231216220109447.png" alt="image-20231216220109447"></p>
+<h6 id="（二）"><a href="#（二）" class="headerlink" title="（二）"></a>（二）</h6>
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="http://example.com/2023/12/16/PHP/" title="PHP" target="_blank" rel="external">http://example.com/2023/12/16/PHP/</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/hkbijihxl" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/images/avatar.jpg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/hkbijihxl" target="_blank"><span class="text-dark">hkbijihxl</span><small class="ml-1x">汀花雨细，水树风闲，又是秋来。</small></a></h3>
+        <div>个人简介。</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
+  </article>
+  
+    
+  <section id="comments">
+  	
+      <div id="vcomments"></div>
+    
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    
+    <li class="next">
+      <a href="/2023/12/11/vue/" title="vue"><span>Older&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-fancy btn-donate pop-onhover bg-gradient-warning" data-toggle="modal" data-target="#donateModal"><span>$</span></button>
+  <!-- <div class="wave-icon wave-icon-danger btn-donate" data-toggle="modal" data-target="#donateModal">
+    <div class="wave-circle"><span class="icon"><i class="icon icon-bill"></i></span></div>
+  </div> -->
+  
+  
+  <div class="bar-right">
+    
+    <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter" data-mobile-sites="weibo,qq,qzone"></div>
+    
+  </div>
+  </div>
+</nav>
+  
+<!-- Modal -->
+<div class="modal modal-center modal-small modal-xs-full fade" id="donateModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content donate">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <div class="modal-body">
+        <div class="donate-box">
+          <div class="donate-head">
+            <p>Maybe you could buy me a cup of coffee.</p>
+          </div>
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane fade active in" id="alipay">
+              <div class="donate-payimg">
+                <img src="/images/donate/alipayimg.png" alt="Scan Qrcode" title="Scan" />
+              </div>
+              <p class="text-muted mv">Scan this qrcode</p>
+              <p class="text-grey">Open alipay app scan this qrcode, buy me a coffee!</p>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="wechatpay">
+              <div class="donate-payimg">
+                <img src="/images/donate/wechatpayimg.png" alt="Scan Qrcode" title="Scan" />
+              </div>
+              <p class="text-muted mv">Scan this qrcode</p>
+              <p class="text-grey">Open wechat app scan this qrcode, buy me a coffee!</p>
+            </div>
+          </div>
+          <div class="donate-footer">
+            <ul class="nav nav-tabs nav-justified" role="tablist">
+              <li role="presentation" class="active">
+                <a href="#alipay" id="alipay-tab" role="tab" data-toggle="tab" aria-controls="alipay" aria-expanded="true"><i class="icon icon-alipay"></i> alipay</a>
+              </li>
+              <li role="presentation" class="">
+                <a href="#wechatpay" role="tab" id="wechatpay-tab" data-toggle="tab" aria-controls="wechatpay" aria-expanded="false"><i class="icon icon-wepay"></i> wechat payment</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/hkbijihxl" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="https://weibo.com/u/7832381828" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
+        
+        <li><a href="https://twitter.com/iwebued" target="_blank" title="Twitter" data-toggle=tooltip data-placement=top><i class="icon icon-twitter"></i></a></li>
+        
+        <li><a href="https://www.behance.net/cofess" target="_blank" title="Behance" data-toggle=tooltip data-placement=top><i class="icon icon-behance"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    <div class="copyright">
+    	
+        <div class="publishby">
+        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+        </div>
+    </div>
+</footer>
+  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+
+<script src="/js/plugin.min.js"></script>
+
+
+<script src="/js/application.js"></script>
+
+
+    <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+
+
+
+
+   
+
+
+
+
+   
+    
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/valine"></script>
+  <script type="text/javascript">
+  var GUEST = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link';
+  meta = meta.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#vcomments',
+    verify: false,
+    notify: false,
+    appId: '',
+    appKey: '',
+    placeholder: 'Just go go',
+    avatar: 'mm',
+    meta: meta,
+    pageSize: '10' || 10,
+    visitor: false
+  });
+  </script>
+
+     
+
+
+
+
+
+
+
+</body>
+</html>
