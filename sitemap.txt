@@ -1,3 +1,4 @@
+http://example.com/2023/12/20/sql%E6%B3%A8%E5%85%A5/
 http://example.com/2023/12/11/vue/
 http://example.com/2023/12/16/PHP/
 http://example.com/2023/12/04/%E8%B7%AF%E7%94%B1%E4%B8%8E%E4%BA%A4%E6%8D%A2/
