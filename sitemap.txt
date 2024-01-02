@@ -1,5 +1,5 @@
 http://example.com/2024/01/02/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/
-http://example.com/2023/12/26/sqli_labs%E9%80%9A%E5%85%B3/
+http://example.com/2023/12/26/sqli-labs%E9%80%9A%E5%85%B3/
 http://example.com/2023/12/20/sql%E6%B3%A8%E5%85%A5/
 http://example.com/2023/12/11/vue/
 http://example.com/2023/12/16/PHP/
