@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2023-12-27T13:20:54.330Z</updated>
+  <updated>2024-01-02T07:23:04.494Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>信息收集</title>
+    <link href="http://example.com/2024/01/02/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/"/>
+    <id>http://example.com/2024/01/02/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/</id>
+    <published>2024-01-02T02:31:05.000Z</published>
+    <updated>2024-01-02T07:23:04.494Z</updated>
+    
+    <content type="html"><![CDATA[<p>域名</p><p>根域</p><p>一级域名</p><p>二级域名</p><p>三级域名</p><p>语法</p><p>百度：- +   社工库 -博客园 +CSDN</p><p>谷歌：“ ”       *            filetype:pdf</p><p>“hnuit.edu.cn” inurl:login(id)</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;域名&lt;/p&gt;
+&lt;p&gt;根域&lt;/p&gt;
+&lt;p&gt;一级域名&lt;/p&gt;
+&lt;p&gt;二级域名&lt;/p&gt;
+&lt;p&gt;三级域名&lt;/p&gt;
+&lt;p&gt;语法&lt;/p&gt;
+&lt;p&gt;百度：- +   社工库 -博客园 +CSDN&lt;/p&gt;
+&lt;p&gt;谷歌：“ ”       *            filetype:pdf&lt;/</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>sqli通关</title>
