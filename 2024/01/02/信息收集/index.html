@@ -63,8 +63,12 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240107232054208.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240107232915749.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240107233159848.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240107234352232.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240107234251797.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240107234452911.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240107234552867.png">
 <meta property="article:published_time" content="2024-01-02T02:31:05.000Z">
-<meta property="article:modified_time" content="2024-01-07T15:32:58.110Z">
+<meta property="article:modified_time" content="2024-01-07T15:46:07.009Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240106154837510.png">
@@ -667,6 +671,41 @@
 
 <p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240107232915749.png" alt="image-20240107232915749"></p>
 <p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240107233159848.png" alt="image-20240107233159848"></p>
+<h4 id="支付逻辑漏洞之零元购"><a href="#支付逻辑漏洞之零元购" class="headerlink" title="支付逻辑漏洞之零元购"></a>支付逻辑漏洞之零元购</h4><p>参数包里面没有价格，或者价格跟商品id 校验，导致无法修改商品金额</p>
+<p>1，隐藏商品的模糊测试，商品id</p>
+<p>2，第一个:商品下单的处导致</p>
+<p>3，第二个，商品购买处导致</p>
+<p>4，购物车未校验加入零元商品商品</p>
+<p>5，第四个是，支付宝接口和商品接口未校验导致商品任意购买</p>
+<p>6.商品数量校验导致零元购，</p>
+<p>7.附带商品导致支付漏洞</p>
+<p>8.四舍五入导致支付漏洞系统的支付和微信的支付校验导致(提现) 0.009 0.01</p>
+<p>9.使用过红包的订单:有一个支付宝的订单号 有效期是15 分钟 商家对接支付宝取消订单红包返回无限使用</p>
+<p>并发漏洞(服务器对功能点的多线程处理):优惠券，微博的点赞关注 取消点赞，取。消关注 优惠商品下单所有的都能并发</p>
+<h4 id="弱口令"><a href="#弱口令" class="headerlink" title="弱口令"></a>弱口令</h4><p>弱口令没有严格的标准和准确的定义，通常认为容易被别人猜测到或被破解工具破解的口令均为弱口令。</p>
+<p>通常以下情况会被定为弱口令：</p>
+<ul>
+<li>连续的数字</li>
+<li>连续的字母</li>
+<li>连续的（数字+字母）</li>
+<li>公司（全称or简称）+连续的（字母or数字）</li>
+<li>个人姓名（全称or简称）+连续的（字母or数字）</li>
+<li>网站域名+连续的（字母or数字）</li>
+<li>任意（上+下 or 左+右 or shift）连续的键盘密码</li>
+<li>包含上述情况任意位置的特殊字符</li>
+<li>包含上述情况任意位置的年份的数字</li>
+<li>包含上述情况任意位置的首字母大写</li>
+<li>包含上述情况任意位置的常见单词</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">username:admin</span><br><span class="line">password:</span><br><span class="line">admin</span><br><span class="line">admin123456</span><br><span class="line">admin123</span><br><span class="line">123456</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="http://121.196.185.222:8022/#/authority/apiscope">http://121.196.185.222:8022/#/authority/apiscope</a></p>
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240107234352232.png" alt="image-20240107234352232"></p>
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240107234251797.png" alt="image-20240107234251797"></p>
+<p><a target="_blank" rel="noopener" href="http://49.232.208.224:8003/#/powerDevice">http://49.232.208.224:8003/#/powerDevice</a></p>
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240107234452911.png" alt="image-20240107234452911"></p>
+<p><a target="_blank" rel="noopener" href="http://119.91.139.108:8091/admin/index.html">http://119.91.139.108:8091/admin/index.html</a></p>
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240107234552867.png" alt="image-20240107234552867"></p>
 
       
     </div>
