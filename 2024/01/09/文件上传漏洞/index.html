@@ -18,12 +18,12 @@
   
   
   <title>文件上传漏洞 | Hexo</title>
-  <meta name="description" content="upload_labslab1一句话马   F12，设置，禁用页面js   lab2lab3老版本环境:phpstudy2014  lab4老版本环境:phpstudy2014   lab5lab6(黑名单)  lab7">
+  <meta name="description" content="upload_labslab1一句话马   F12，设置，禁用页面js   lab2lab3老版本环境:phpstudy2014  lab4老版本环境:phpstudy2014   lab5lab6(黑名单)  lab7练习目标ip:192.168.2.114 访问一下  准备一个马，上传   使用burp抓包，开启拦截，访问一下上传后的路径upload   把包发送到intruder中，添加一个">
 <meta property="og:type" content="article">
 <meta property="og:title" content="文件上传漏洞">
 <meta property="og:url" content="http://example.com/2024/01/09/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="upload_labslab1一句话马   F12，设置，禁用页面js   lab2lab3老版本环境:phpstudy2014  lab4老版本环境:phpstudy2014   lab5lab6(黑名单)  lab7">
+<meta property="og:description" content="upload_labslab1一句话马   F12，设置，禁用页面js   lab2lab3老版本环境:phpstudy2014  lab4老版本环境:phpstudy2014   lab5lab6(黑名单)  lab7练习目标ip:192.168.2.114 访问一下  准备一个马，上传   使用burp抓包，开启拦截，访问一下上传后的路径upload   把包发送到intruder中，添加一个">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240109145707688.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240109144609926.png">
@@ -34,8 +34,18 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240109143910829.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240109151336645.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240109151302318.png">
+<meta property="og:image" content="http://example.com/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E.assets/image-20240110211740199.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240110211659100.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240110212123478.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240110212338645.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240110212414855.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240110212555135.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240110212728549.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240110213058722.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240110213325868.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240110213400124.png">
 <meta property="article:published_time" content="2024-01-09T01:54:15.000Z">
-<meta property="article:modified_time" content="2024-01-09T07:23:59.919Z">
+<meta property="article:modified_time" content="2024-01-10T13:35:57.698Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240109145707688.png">
@@ -379,7 +389,28 @@
 <p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240109143910829.png" alt="image-20240109143910829"></p>
 <h4 id="lab5"><a href="#lab5" class="headerlink" title="lab5"></a>lab5</h4><h4 id="lab6-黑名单"><a href="#lab6-黑名单" class="headerlink" title="lab6(黑名单)"></a>lab6(黑名单)</h4><p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240109151336645.png" alt="image-20240109151336645"></p>
 <p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240109151302318.png" alt="image-20240109151302318"></p>
-<h4 id="lab7"><a href="#lab7" class="headerlink" title="lab7"></a>lab7</h4>
+<h4 id="lab7"><a href="#lab7" class="headerlink" title="lab7"></a>lab7</h4><h4 id="练习"><a href="#练习" class="headerlink" title="练习"></a>练习</h4><p>目标ip:192.168.2.114</p>
+<p>访问一下</p>
+<p><img src="/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E.assets/image-20240110211740199.png" alt="image-20240110211740199"></p>
+<p>准备一个马，上传</p>
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240110211659100.png" alt="image-20240110211659100"></p>
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240110212123478.png" alt="image-20240110212123478"></p>
+<p>使用burp抓包，开启拦截，访问一下上传后的路径upload</p>
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240110212338645.png" alt="image-20240110212338645"></p>
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240110212414855.png" alt="image-20240110212414855"></p>
+<p>把包发送到intruder中，添加一个payload</p>
+<p>类型为数值1-9999</p>
+<p>添加一个前缀filename.php(sdsd.php)</p>
+<p>再加一个Hash，加密方式为MD5</p>
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240110212555135.png" alt="image-20240110212555135"></p>
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240110212728549.png" alt="image-20240110212728549"></p>
+<p>开始攻击</p>
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240110213058722.png" alt="image-20240110213058722"></p>
+<p>有一个成功,访问一下(&#x2F;upload&#x2F;8f99f3c89bbad1009f303eb47e45a155.php)</p>
+<p>获得shell</p>
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240110213325868.png" alt="image-20240110213325868"></p>
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240110213400124.png" alt="image-20240110213400124"></p>
+
       
     </div>
     <div class="article-footer">
