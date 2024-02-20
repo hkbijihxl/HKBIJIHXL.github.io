@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://example.com/2024/02/20/CSRF%E8%B7%A8%E7%AB%99%E8%AF%B7%E6%B1%82%E4%BC%AA%E9%80%A0/</loc>
+    <lastmod>2024-02-20</lastmod>
+  </url>
+  <url>
+    <loc>http://example.com/2024/02/20/SSRF%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%AF%B7%E6%B1%82%E4%BC%AA%E9%80%A0/</loc>
+    <lastmod>2024-02-20</lastmod>
+  </url>
+  <url>
+    <loc>http://example.com/2024/02/20/ssrf-redis/</loc>
+    <lastmod>2024-02-20</lastmod>
+  </url>
+  <url>
+    <loc>http://example.com/2024/01/24/%E9%9D%B6%E6%9C%BA-medium-socialnetwork/</loc>
+    <lastmod>2024-01-24</lastmod>
+  </url>
+  <url>
     <loc>http://example.com/2024/01/24/%E9%9D%B6%E6%9C%BA-easy-cloudantivirus/</loc>
     <lastmod>2024-01-24</lastmod>
   </url>
