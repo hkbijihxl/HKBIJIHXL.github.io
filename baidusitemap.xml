@@ -1,8 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://example.com/2024/01/09/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E/</loc>
+    <lastmod>2024-02-22</lastmod>
+  </url>
+  <url>
+    <loc>http://example.com/2024/02/21/CSRF%E5%92%8CSSRF/</loc>
+    <lastmod>2024-02-21</lastmod>
+  </url>
+  <url>
     <loc>http://example.com/2024/02/20/CSRF%E8%B7%A8%E7%AB%99%E8%AF%B7%E6%B1%82%E4%BC%AA%E9%80%A0/</loc>
-    <lastmod>2024-02-20</lastmod>
+    <lastmod>2024-02-21</lastmod>
   </url>
   <url>
     <loc>http://example.com/2024/02/20/SSRF%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%AF%B7%E6%B1%82%E4%BC%AA%E9%80%A0/</loc>
@@ -35,10 +43,6 @@
   <url>
     <loc>http://example.com/2024/01/16/%E8%B7%A8%E7%AB%99%E8%84%9A%E6%9C%AC%E6%94%BB%E5%87%BB-XSS/</loc>
     <lastmod>2024-01-17</lastmod>
-  </url>
-  <url>
-    <loc>http://example.com/2024/01/09/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E6%BC%8F%E6%B4%9E/</loc>
-    <lastmod>2024-01-15</lastmod>
   </url>
   <url>
     <loc>http://example.com/2024/01/12/%E9%9D%B6%E6%9C%BA-Hackademic/</loc>
